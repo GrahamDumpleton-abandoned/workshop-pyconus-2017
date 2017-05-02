@@ -25,7 +25,7 @@ system using the following links:
 - {{DOWNLOAD_CLIENT_LINUX_64BIT}}[Linux (64 Bit)]
 - {{DOWNLOAD_CLIENT_LINUX_32BIT}}[Linux (32 Bit)]
 
-Put the archive in the following directory:
+It is suggested you place the archive in the following directory:
 
 **Windows:**
 
@@ -47,6 +47,9 @@ C:\OpenShift
 ----
 ~/OpenShift
 ----
+
+This can also be used as the location of the `oc` executable when extracted
+from the package archive.
 
 ### Extracting the command line client
 
