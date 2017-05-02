@@ -2,10 +2,10 @@ config:
   vars:
     - name: CONSOLE_ADDRESS
       desc: Address to access the OpenShift console
-      value: 10.2.2.2:8443
+      value: 127.0.0.1:8443
     - name: ROUTER_ADDRESS
       desc: Router DNS suffix (https://appname-project.<suffix>)
-      value: "apps.10.2.2.2.xip.io"
+      value: "127.0.0.1.xip.io"
     - name: DOWNLOAD_CLIENT_WINDOWS
       desc: URL to download oc client for Windows
       value: "https://github.com/openshift/origin/releases/download/v1.5.0/openshift-origin-client-tools-v1.5.0-031cbe4-windows.zip"
@@ -49,3 +49,5 @@ modules:
       OC_VERSION:
   accessing-openshift:
     name: Accessing OpenShift
+    vars:
+      CONSOLE_ADDRESS:
