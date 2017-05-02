@@ -32,5 +32,5 @@ The key exercises you will work through are as follows:
   images uploaded with posts, and stored in the local filesystem, so that
   they are preserved across restarts of the web application.
 
-You can start working through the exercices as soon as you are ready and
+You can start working through the exercises as soon as you are ready and
 there is no need to wait for the instructor.
