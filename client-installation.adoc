@@ -96,7 +96,7 @@ Windows can vary by the version of Windows being run.
 For Windows 10, right click on your computer name inside of the __File
 Explorer__. Select __Advanced System Settings__. Click on the __Advanced
 Tab__, and then finally click on __Environment Variables__. From the
-dialog window, select the __Path__ variable and add "`;C:\OpenShift`" at the
+dialog window, select the __Path__ variable and add `;C:\OpenShift` at the
 end. The modification will apply to any new terminal window created.
 
 If using __PowerShell__, you could also temporarily modify the executable
@@ -129,7 +129,7 @@ current terminal window by running:
 $ export PATH=$PATH:~/OpenShift
 ----
 
-Alternatively add this line to `~/.bash_profile` and will apply for any
+Alternatively add this line to `~/.bash_profile` and it will apply for any
 new terminal window created.
 
 **Linux:**
@@ -142,7 +142,7 @@ current terminal window by running:
 $ export PATH=$PATH:~/OpenShift
 ----
 
-Alternatively add this line to `~/.bash_profile` and will apply for any
+Alternatively add this line to `~/.bash_profile` and it will apply for any
 new terminal window created.
 
 ### Verifying the command line client
