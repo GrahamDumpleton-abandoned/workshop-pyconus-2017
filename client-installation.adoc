@@ -1,34 +1,32 @@
 ## Client Installation
 
-### Command Line Interface
-
-OpenShift ships with a feature rich web console as well as command line tools
-to provide users with a nice interface to work with applications deployed to the
-platform.  The OpenShift tools are a single executable written in the Go
-programming language and is available for the following operating systems:
+To deploy applications to OpenShift and manage them, OpenShift provides a
+feature rich web console, as well as a command line tool. The OpenShift
+command line client is a single executable called _oc_, written in the Go
+programming language. The command line client is available for the
+following operating systems:
 
 - Microsoft Windows
 - Apple OS X
 - Linux
 
-#### Downloading the tools
-During this lab, we are going to download the client tool and add them to our
-operating system $PATH environment variables so the executable is accessible
-from any directory on the command line.
+This workshop will be using both the web console and command line client.
+You therefore need to download the command line client and install it,
+such it that is accessible from the program search path of your command
+shell.
 
-The first thing we want to do is download the correct executable for your
-operating system as linked below:
+### Downloading the client
+
+Download the appropriate client for your operating system using the
+following links:
 
 - {{DOWNLOAD_CLIENT_WINDOWS}}[Microsoft Windows]
-- {{DOWNLOAD_CLIENT_MAC}}[Apple OS X]
-- {{DOWNLOAD_CLIENT_LIN64}}[Linux 64]
-{% if DOWNLOAD_CLIENT_LIN32.empty? %}
-- {{DOWNLOAD_CLIENT_LIN32}}[Linux 32]
-{% endif %}
+- {{DOWNLOAD_CLIENT_MACOSX}}[Apple OS X]
+- {{DOWNLOAD_CLIENT_LINUX_64BIT}}[Linux (64 Bit)]
 
-Once the file has been downloaded, you will need to extract the contents as it
-is a compressed archive.  I would suggest saving this file to the following
-directories:
+Once the file has been downloaded, you will need to extract the contents as
+it is a compressed archive. Put the archive and the extracted _oc_ executable
+file in the following directory:
 
 **Windows:**
 
@@ -51,7 +49,11 @@ C:\OpenShift
 ~/OpenShift
 ----
 
-#### Extracting the tools
+Use the following instructions to extract the _oc_ executable file and add
+it your executable search path.
+
+### Extracting the tools
+
 Once you have the tools downloaded, you will need to extract the contents:
 
 **Windows:**
