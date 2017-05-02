@@ -3,12 +3,8 @@
 To deploy applications to OpenShift and manage them, OpenShift provides a
 feature rich web console, as well as a command line tool. The OpenShift
 command line client is a single executable called `oc`, written in the Go
-programming language. The command line client is available for the
-following operating systems:
-
-- Microsoft Windows
-- Apple OS X
-- Linux
+programming language. The command line client is available for Microsoft
+Windows, Apple OS X and Linux.
 
 This workshop will be using both the web console and command line client.
 You therefore need to download the command line client and install it,
