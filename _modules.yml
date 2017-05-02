@@ -6,39 +6,6 @@ config:
     - name: ROUTER_ADDRESS
       desc: Router DNS suffix (https://appname-project.<suffix>)
       value: "apps.10.2.2.2.xip.io"
-    - name: USER_NAME
-      desc: Username to login into console and oc
-      value: "dev"
-    - name: USER_PASSWORD
-      desc: Password to login
-      value: "dev"
-    - name: MASTERS
-      desc: Number of master nodes in the cluster
-      value: 1
-    - name: INFRA
-      desc:  Number of infra nodes in the cluster
-      value: 1
-    - name: NODES
-      desc: Number of container nodes in the cluster
-      value: 1
-    - name: NUM_USERS
-      desc: Number of users created for workshop
-      value: 0
-    - name: NFS_ENABLED
-      desc: Is NFS enabled?
-      value: false
-    - name: METRICS_ENABLED
-      desc: Are metrics enabled?
-      value: false
-    - name: LOGGING_ENABLED
-      desc: Is logging enabled?
-      value: false
-    - name: ETHERPAD_ENABLED
-      desc: Is etherpad enabled?
-      value: false
-    - name: ETHERPAD_URL_PREFIX
-      desc: Ethepad's URL prefix (<appname>-<project>)
-      value: etherpad-workshop-infra
     - name: DOWNLOAD_CLIENT_WINDOWS
       desc: URL to download oc client for Windows
       value: "https://github.com/openshift/origin/releases/download/v1.5.0/openshift-origin-client-tools-v1.5.0-031cbe4-windows.zip"
@@ -57,9 +24,6 @@ config:
     - name: OC_VERSION
       desc: Expected output when `oc version` is executed
       value: "oc v1.5.0+031cbe4\nkubernetes v1.5.2+43a9be4"
-    - name: DOCS_URL
-      desc: URL prefix to access docs (https://docs.openshift.org/latest)
-      value: <url>
     - name: EXPLORE_PROJECT_NAME
       desc: Project the user is supposed to work with
       value: project
@@ -75,15 +39,6 @@ modules:
     name: Workshop Overview
   environment-overview:
     name: Environment Overview
-    vars:
-      MASTERS:
-      INFRA:
-      NODES:
-      NFS_ENABLED:
-      LOGGING_ENABLED:
-      ETHERPAD_ENABLED:
-      NUM_USERS:
-      ETHERPAD_URL_PREFIX:
   client-installation:
     name: Client Installation
     vars:
