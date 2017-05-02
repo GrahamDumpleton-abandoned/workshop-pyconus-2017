@@ -111,8 +111,8 @@ $Env:Path += ";C:\OpenShift"
 ----
 
 Rather than updating the excutable search path, you could always just copy
-it to the `C:\Windows` directory, or other directory you know is already on
-your path.
+the `oc` executable to the `C:\Windows` directory, or other directory you
+know is already on your path.
 
 For instructions on how to edit the executable search path on older
 versions of Windows see:
