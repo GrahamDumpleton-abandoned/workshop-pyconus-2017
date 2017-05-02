@@ -1,1 +1,36 @@
 ## Workshop Overview
+
+In this workshop you will learn about deploying applications to OpenShift.
+
+The workshop provides a set of hands on exercises for you to work through.
+That is, you are provided with the instructions and work through them
+yourself at your own pace. The instructor and any workshop assistants are
+here simply to help you if you have any problems, or to answer any
+questions you may have. The instructor will not be leading you through the
+exercises. The workshop is run in this way to give you the maximum amount
+of time possible to work with and experiment with OpenShift, rather than
+wasting time waiting for the instructor to show you how to do things at
+each step.
+
+The sample application which will be used is a Python web application
+implemented using the Django web framework. The web application implements
+a simple blog site and is hosted using `mod_wsgi-express`.
+
+The key exercises you will work through are as follows:
+
+- Deploying from source code the Python web application. Initially this
+  will use a self contained SQLite database with no persistence of data
+  across restarts.
+
+- Deploy a PostgreSQL database, link the Python web application up to
+  the database and initialise the database. The PostgreSQL database will
+  use a persistent volume for data storage so that contents of posts, which
+  are stored in the database, are preserved across restarts of the
+  database.
+
+- Attach a persistent volume to the Python web application for storage of
+  images uploaded with posts, and stored in the local filesystem, so that
+  they are preserved across restarts of the web application.
+
+You can start working through the exercices as soon as you are ready and
+there is no need to wait for the instructor.
