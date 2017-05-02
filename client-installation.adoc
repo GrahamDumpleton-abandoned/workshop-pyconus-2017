@@ -12,10 +12,10 @@ following operating systems:
 
 This workshop will be using both the web console and command line client.
 You therefore need to download the command line client and install it,
-such that it is accessible from the executable search path of your command
+such that it can be found on the executable search path of your command
 shell.
 
-### Downloading the client
+### Downloading the client archive
 
 Download the package archive containing the client for your operating
 system using the following links:
@@ -23,6 +23,7 @@ system using the following links:
 - {{DOWNLOAD_CLIENT_WINDOWS}}[Microsoft Windows]
 - {{DOWNLOAD_CLIENT_MACOSX}}[Apple OS X]
 - {{DOWNLOAD_CLIENT_LINUX_64BIT}}[Linux (64 Bit)]
+- {{DOWNLOAD_CLIENT_LINUX_32BIT}}[Linux (32 Bit)]
 
 Put the archive in the following directory:
 
@@ -47,10 +48,7 @@ C:\OpenShift
 ~/OpenShift
 ----
 
-Use the following instructions to extract the _oc_ executable file and add
-it your executable search path.
-
-### Extracting the client
+### Extracting the command line client
 
 To extract the package archive containing the client, do the following:
 
@@ -82,7 +80,10 @@ the file. Once you are in the directory, enter in the following command:
 $ tar --strip-components 1 -xvzf openshift-origin-client-tools-{{OC_CLIENT_VERSION}}-linux-64bit.tar.gz
 ----
 
-#### Adding it to your PATH
+The result should be that you can see the `oc` executable file located in
+the directory where you are extracting the package archive.
+
+### Updating executable search path
 
 To add the directory containing the `oc` executable file to your executable
 search path, do the following:
@@ -127,7 +128,8 @@ $ export PATH=$PATH:~/OpenShift
 $ export PATH=$PATH:~/OpenShift
 ----
 
-#### Verify
+### Verifying the command line client
+
 At this point, we should have the oc tool available for use.  Let's test this
 out by printing the version of the oc command:
 
@@ -143,5 +145,6 @@ You should see the following (or something similar):
 {{OC_VERSION}}
 ----
 
-If you get an error message, you have not updated your path correctly.  If you
-need help, raise your hand and the instructor will assist.
+If you get an error message indicating that the `oc` program cannot be
+found, you have not updated your path correctly. If you need help ask the
+instructor or workshop assistants for help.

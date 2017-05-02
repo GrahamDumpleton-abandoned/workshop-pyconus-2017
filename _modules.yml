@@ -48,6 +48,9 @@ config:
     - name: DOWNLOAD_CLIENT_LINUX_64BIT
       desc: URL to download oc client for 64bit Linux
       value: "https://github.com/openshift/origin/releases/download/v1.5.0/openshift-origin-client-tools-v1.5.0-031cbe4-linux-64bit.tar.gz"
+    - name: DOWNLOAD_CLIENT_LINUX_32BIT
+      desc: URL to download oc client for 32bit Linux
+      value: "https://github.com/openshift/origin/releases/download/v1.5.0/openshift-origin-client-tools-v1.5.0-031cbe4-linux-32bit.tar.gz"
     - name: OC_CLIENT_VERSION
       desc: Version of oc command line client.
       value: "v1.5.0-031cbe4"
