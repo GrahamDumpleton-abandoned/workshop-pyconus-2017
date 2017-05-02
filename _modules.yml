@@ -47,3 +47,5 @@ modules:
       DOWNLOAD_CLIENT_LINUX64:
       OC_CLIENT_VERSION:
       OC_VERSION:
+  accessing-openshift:
+    name: Accessing OpenShift
