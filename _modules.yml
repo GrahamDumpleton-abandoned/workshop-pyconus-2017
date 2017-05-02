@@ -70,7 +70,7 @@ config:
 modules:
   workshop-overview:
     name: Workshop Overview
-  environment:
+  environment-overview:
     name: Environment Overview
     vars:
       MASTERS:
@@ -81,8 +81,8 @@ modules:
       ETHERPAD_ENABLED:
       NUM_USERS:
       ETHERPAD_URL_PREFIX:
-  install:
-    name: Installing the *oc* client tool
+  client-installation:
+    name: Client Installation
     vars:
       DOWNLOAD_CLIENT_WINDOWS:
       DOWNLOAD_CLIENT_MAC:

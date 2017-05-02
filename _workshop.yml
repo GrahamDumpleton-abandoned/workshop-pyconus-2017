@@ -12,5 +12,5 @@ vars:
 modules:
   activate:
   - workshop-overview
-  - environment
-  - install
+  - environment-overview
+  - client-installation

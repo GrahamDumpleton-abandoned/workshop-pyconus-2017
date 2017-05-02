@@ -1,4 +1,4 @@
-## Lab: Installing the OpenShift CLI
+## Client Installation
 
 ### Command Line Interface
 
