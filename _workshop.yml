@@ -1,6 +1,6 @@
 ---
 id: pyconus2017
-name: PyCon US OpenShift Workshop
+name: OpenShift Workshop (PyCon US 2017)
 
 content:
   url: https://raw.githubusercontent.com/GrahamDumpleton/workshop-pyconus-2017/master
@@ -11,4 +11,5 @@ vars:
 
 modules:
   activate:
+  - environment
   - install

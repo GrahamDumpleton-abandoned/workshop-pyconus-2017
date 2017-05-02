@@ -87,11 +87,3 @@ modules:
       DOWNLOAD_CLIENT_LIN32:
       DOWNLOAD_CLIENT_LIN64:
       OC_VERSION:
-    revisions:
-      ocp:
-        vars:
-          DOWNLOAD_CLIENT_WINDOWS: <win link>
-          DOWNLOAD_CLIENT_MAC: <mac link>
-          DOWNLOAD_CLIENT_LIN32: <lin link>
-          DOWNLOAD_CLIENT_LIN64: <lim link>
-          OC_VERSION: <status>
