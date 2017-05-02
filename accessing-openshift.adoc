@@ -90,8 +90,6 @@ project. Create a new project which incorporates your user name by running:
 $ oc new-project project-userXX
 ----
 
-Replace `userXX`` with your assigned user name.
-
 You should see the following message to confirm the creation of the project.
 
 [source]
@@ -105,15 +103,16 @@ You can add applications to this project with the 'new-app' command. For example
 to build a new example application in Ruby.
 ----
 
-### The Web Console
+### Logging into the web console
 
-OpenShift ships with a web-based console that will allow users to
-perform various tasks via a browser.  To get a feel for how the web console
-works, open your browser and go to the following URL:
+OpenShift ships with a web-based console that will allow users to perform
+various tasks via a browser. To get a feel for how the web console works,
+open your browser and go to the following URL:
 
 *link:https://{{CONSOLE_ADDRESS}}[]*
 
-The first screen you will see is the authentication screen.  Enter in the following credentials:
+The first screen you will see is the authentication screen. Enter in the
+following credentials:
 
 [source]
 ----
