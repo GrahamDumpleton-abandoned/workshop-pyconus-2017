@@ -17,16 +17,14 @@ shell.
 
 ### Downloading the client
 
-Download the appropriate client for your operating system using the
-following links:
+Download the package archive containing the client for your operating
+system using the following links:
 
 - {{DOWNLOAD_CLIENT_WINDOWS}}[Microsoft Windows]
 - {{DOWNLOAD_CLIENT_MACOSX}}[Apple OS X]
 - {{DOWNLOAD_CLIENT_LINUX_64BIT}}[Linux (64 Bit)]
 
-Once the file has been downloaded, you will need to extract the contents as
-it is a compressed archive. Put the archive and the extracted `oc` executable
-file in the following directory:
+Put the archive in the following directory:
 
 **Windows:**
 
@@ -52,14 +50,14 @@ C:\OpenShift
 Use the following instructions to extract the _oc_ executable file and add
 it your executable search path.
 
-### Extracting the tools
+### Extracting the client
 
-Once downloaded, extract the contents of the archive as follows:
+To extract the package archive containing the client, do the following:
 
 **Windows:**
 
-To extract the zip archive on windows, you will need a zip utility
-installed on your system. With newer versions of windows (greater than XP),
+To extract the zip archive on Windows, you will need a zip utility
+installed on your system. With newer versions of Windows (greater than XP),
 this is provided by the operating system. Right click on the downloaded
 file using __File Explorer__ and select the menu option to extract the
 contents.
@@ -76,26 +74,36 @@ $ unzip openshift-origin-client-tools-{{OC_CLIENT_VERSION}}-mac.zip
 
 **Linux:**
 
-Open up a terminal window and change to the directory where you downloaded the
-file.  Once you are in the directory, enter in the following command:
+Open up a terminal window and change to the directory where you downloaded
+the file. Once you are in the directory, enter in the following command:
 
 [source]
 ----
-$ tar -xvz --strip-components 1 -f openshift-origin-client-tools-{{OC_CLIENT_VERSION}}-linux-64bit.tar.gz
+$ tar --strip-components 1 -xvzf openshift-origin-client-tools-{{OC_CLIENT_VERSION}}-linux-64bit.tar.gz
 ----
 
-#### Adding `oc` to your PATH
+#### Adding it to your PATH
+
+To add the directory containing the `oc` executable file to your executable
+search path, do the following:
 
 **Windows:**
 
-Because changing your PATH on windows varies by version of the operating system,
-we will not list each operating system here.  However, the general workflow is
-right click on your computer name inside of the file explorer.  Select Advanced
-system settings. I guess changing your PATH is considered an advanced task? :)
-Click on the advanced tab, and then finally click on Environment variables.
-Once the new dialog opens, select the Path variable and add ";C:\OpenShift" at
-the end.  For an easy way out, you could always just copy it to C:\Windows or a
-directory you know is already on your path. For more detailed instructions:
+The exact steps to add a new directory to the executable search path can
+vary by the version of Windows being run.
+
+For Windows 10, right click on your computer name inside of the __File
+Explorer__. Select __Advanced System Settings__. Click on the __Advanced
+Tab__, and then finally click on __Environment Variables__. Once the new
+dialog opens, select the __Path__ variable and add ";C:\OpenShift" at the
+end.
+
+Instead of updating the excutable search path, you could always just copy
+it to the "C:\Windows" directory, or other directory you know is already on
+your path.
+
+For instructions on how to edit the executable search path on older
+versions of Windows see:
 
 https://support.microsoft.com/en-us/kb/310519[Windows XP]
 
@@ -104,8 +112,6 @@ http://banagale.com/changing-your-system-path-in-windows-vista.htm[Windows Vista
 http://geekswithblogs.net/renso/archive/2009/10/21/how-to-set-the-windows-path-in-windows-7.aspx[Windows 7]
 
 http://www.itechtics.com/customize-windows-environment-variables/[Windows 8]
-
-Windows 10 - Follow the directions above.
 
 **OS X:**
 
