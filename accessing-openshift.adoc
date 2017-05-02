@@ -26,13 +26,14 @@ You can bypass the certificate check, but any data you send to the server could 
 Use insecure connections? (y/n):
 ----
 
-Respond with `Y`.
-
 The reason you received this message is because the OpenShift environment
 being used for this workshop is using a self-signed certificate. In a
 real-world scenario, either OpenShift's certificate would be signed by a
 standard CA (eg: Thawte, Verisign, StartSSL, etc.) or signed by a
 corporate-standard CA that you already have installed on your system.
+
+Respond with `Y` to accept the use of the self signed certificate and
+continue.
 
 [NOTE]
 ====
@@ -67,34 +68,41 @@ You don't have any projects. You can try to create a new project, by running
     oc new-project <projectname>
 ----
 
-### Using a project
+### Creating a new project
 
 Projects are a top level concept to help you organize your deployments. An
-OpenShift project allows a community of users (or a user) to organize and manage
-their content in isolation from other communities. Each project has its own
-resources, policies (who can or cannot perform actions), and constraints (quotas
-and limits on resources, etc). Projects act as a "wrapper" around all the
-application services and endpoints you (or your teams) are using for your work.
-For this first lab, we are going to use a project named *smoke* that has been
-created and populated with an application for you.
+OpenShift project allows a community of users (or a single user) to
+organise and manage their content in isolation from other communities.
 
-During this lab, we are going to use a few different commands to make sure that
-things in the environment are working as expected.  Don't worry if you don't
-understand all of the terminology as we will cover it in detail in later labs.
+Each project can have its own resources, policies (who can or cannot
+perform actions), and constraints (quotas and limits on resources, etc).
 
-The first thing we want to do is switch to the *{{EXPLORE_PROJECT_NAME}}{{USER_SUFFIX}}* project. You
-can do this with the following command:
+Projects act as a "wrapper" around all the application services and
+endpoints you (or your teams) are using for your work.
+
+Before you can deploy the Python web application used in this workshop, you
+need to create a new project in which to deploy it. As you are working in a
+shared OpenShift environment, you need to use a unique name for your
+project. Create a new project which incorporates your user name by running:
 
 [source,role=copypaste]
 ----
-oc project {{EXPLORE_PROJECT_NAME}}{{USER_SUFFIX}}
+$ oc new-project project-userXX
 ----
 
-You will see the following confirmation message:
+Replace `userXX`` with your assigned user name.
+
+You should see the following message to confirm the creation of the project.
 
 [source]
 ----
-Now using project "{{EXPLORE_PROJECT_NAME}}{{USER_SUFFIX}}" on server "https://{{CONSOLE_ADDRESS}}".
+Now using project "project-userXX" on server "https://{{CONSOLE_ADDRESS}}".
+
+You can add applications to this project with the 'new-app' command. For example, try:
+
+    oc new-app centos/ruby-22-centos7~https://github.com/openshift/ruby-ex.git
+
+to build a new example application in Ruby.
 ----
 
 ### The Web Console
