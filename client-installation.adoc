@@ -61,7 +61,7 @@ Once downloaded, extract the contents of the archive as follows:
 To extract the zip archive on windows, you will need a zip utility
 installed on your system. With newer versions of windows (greater than XP),
 this is provided by the operating system. Right click on the downloaded
-file using *File Explorer* and select the menu option to extract the
+file using __File Explorer__ and select the menu option to extract the
 contents.
 
 **OS X:**
@@ -69,9 +69,9 @@ contents.
 Open up a terminal window and change to the directory where you downloaded
 the file. Once you are in the directory, enter in the following command:
 
-[source,role=copypaste]
+[source]
 ----
-$ unzip openshift-origin-client-tools-??????-mac.zip
+$ unzip openshift-origin-client-tools-{{OC_CLIENT_VERSION}}-mac.zip
 ----
 
 **Linux:**
@@ -81,7 +81,7 @@ file.  Once you are in the directory, enter in the following command:
 
 [source]
 ----
-$ tar -xvz --strip-components 1 -f openshift-origin-client-tools-??????-linux-64bit.tar.gz
+$ tar -xvz --strip-components 1 -f openshift-origin-client-tools-{{OC_CLIENT_VERSION}}-linux-64bit.tar.gz
 ----
 
 #### Adding `oc` to your PATH
