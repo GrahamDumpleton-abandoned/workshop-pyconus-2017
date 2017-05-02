@@ -24,21 +24,12 @@ config:
     - name: OC_VERSION
       desc: Expected output when `oc version` is executed
       value: "oc v1.5.0+031cbe4\nkubernetes v1.5.2+43a9be4"
-    - name: EXPLORE_PROJECT_NAME
-      desc: Project the user is supposed to work with
-      value: project
-    - name: SUFFIX
-      desc: Username suffix
-      value: XY
-    - name: USER_SUFFIX
-      desc: The user suffix
-      value: -userXY
 
 modules:
   workshop-overview:
     name: Workshop Overview
-  environment-overview:
-    name: Environment Overview
+  user-credentials:
+    name: User Credentials
   client-installation:
     name: Client Installation
     vars:

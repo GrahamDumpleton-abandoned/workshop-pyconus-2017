@@ -5,13 +5,9 @@ name: OpenShift Workshop (PyCon US 2017)
 content:
   url: https://raw.githubusercontent.com/GrahamDumpleton/workshop-pyconus-2017/master
 
-vars:
-  USER_NAME: "userXX"
-  USER_PASSWORD: "pyconus2017"
-
 modules:
   activate:
   - workshop-overview
-  - environment-overview
+  - user-credentials
   - client-installation
   - accessing-openshift
