@@ -90,29 +90,34 @@ search path, do the following:
 
 **Windows:**
 
-The exact steps to add a new directory to the executable search path can
-vary by the version of Windows being run.
+The exact steps to add a new directory to the executable search path on
+Windows can vary by the version of Windows being run.
 
 For Windows 10, right click on your computer name inside of the __File
 Explorer__. Select __Advanced System Settings__. Click on the __Advanced
-Tab__, and then finally click on __Environment Variables__. Once the new
-dialog opens, select the __Path__ variable and add ";C:\OpenShift" at the
+Tab__, and then finally click on __Environment Variables__. From the
+dialog window, select the __Path__ variable and add `;C:\OpenShift` at the
 end.
 
-Instead of updating the excutable search path, you could always just copy
-it to the "C:\Windows" directory, or other directory you know is already on
+If using __PowerShell__, you could also temporarily modify the executable
+search path for the current terminal window by running:
+
+[source]
+----
+$Env:Path = "C:\OpenShift;" + $Env:Path
+----
+
+Rather than updating the excutable search path, you could always just copy
+it to the `C:\Windows` directory, or other directory you know is already on
 your path.
 
 For instructions on how to edit the executable search path on older
 versions of Windows see:
 
-https://support.microsoft.com/en-us/kb/310519[Windows XP]
-
-http://banagale.com/changing-your-system-path-in-windows-vista.htm[Windows Vista]
-
-http://geekswithblogs.net/renso/archive/2009/10/21/how-to-set-the-windows-path-in-windows-7.aspx[Windows 7]
-
-http://www.itechtics.com/customize-windows-environment-variables/[Windows 8]
+- https://support.microsoft.com/en-us/kb/310519[Windows XP]
+- http://banagale.com/changing-your-system-path-in-windows-vista.htm[Windows Vista]
+- http://geekswithblogs.net/renso/archive/2009/10/21/how-to-set-the-windows-path-in-windows-7.aspx[Windows 7]
+- http://www.itechtics.com/customize-windows-environment-variables/[Windows 8]
 
 **OS X:**
 
