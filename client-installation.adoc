@@ -91,7 +91,7 @@ search path, do the following:
 **Windows:**
 
 The exact steps to add a new directory to the executable search path on
-Windows can vary by the version of Windows being run.
+Windows can vary depending on the version of Windows being run.
 
 For Windows 10, right click on your computer name inside of the __File
 Explorer__. Select __Advanced System Settings__. Click on the __Advanced
@@ -164,5 +164,12 @@ You should see the following (or something similar):
 ----
 
 If you get an error message indicating that the `oc` program cannot be
-found, you have not updated your path correctly. If you need help ask the
-instructor or workshop assistants for help.
+found, you have not updated your path correctly.
+
+If you get a different version for `oc` being displayed, ensure you don't
+have an older version of the `oc` executable somewhere else in your
+executable search path. It is recommended that you use the same version as
+the version of OpenShift being used for this workshop.
+
+If you are having problems ask the instructor or workshop assistants for
+help.
