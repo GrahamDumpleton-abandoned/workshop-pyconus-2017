@@ -68,6 +68,8 @@ config:
       value: -userXY
 
 modules:
+  workshop-overview:
+    name: Workshop Overview
   environment:
     name: Environment Overview
     vars:
