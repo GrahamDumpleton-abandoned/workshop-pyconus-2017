@@ -32,13 +32,5 @@ modules:
     name: User Credentials
   client-installation:
     name: Client Installation
-    vars:
-      DOWNLOAD_CLIENT_WINDOWS:
-      DOWNLOAD_CLIENT_MACOSX:
-      DOWNLOAD_CLIENT_LINUX64:
-      OC_CLIENT_VERSION:
-      OC_VERSION:
   accessing-openshift:
     name: Accessing OpenShift
-    vars:
-      CONSOLE_ADDRESS:
