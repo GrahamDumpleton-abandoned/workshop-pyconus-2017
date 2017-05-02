@@ -1,58 +1,37 @@
 ## Environment Overview
 
-You will be interacting with an OpenShift environment that is running on {{ ENVIRONMENT }}. The environment consists of the following systems:
+For this workshop, you will be interacting with an OpenShift environment
+which has been setup to run on a single host. This is a shared environment
+which all other workshop attendees will also be using.
 
-* {{ MASTERS }} master nodes
-* {{ INFRA }} infrastructure nodes
-* {{ NODES }} "application" nodes
-{% if NFS_ENABLED %}
-* An NFS server
-{% endif %}
+Each attendee will login to the OpenShift environment using a separate
+account.
 
-The infrastructure node is providing several services:
+User names are of the form `userXX`, where `XX` starts at the number `01`
+and works upward. The password for all user accounts is `pyconus2017`.
 
-{% if LOGGING_ENABLED %}
-* Aggregated logging
-{% endif %}
-{% if METRICS_ENABLED %}
-* Cluster metrics
-{% endif %}
-* GitLab
-* This lab manual
-* The OpenShift Docker registry
-* The OpenShift router
-{% if ETHERPAD_ENABLED %}
-* Etherpad
-{% endif %}
+Please use only the user name you were assigned.
 
-Additionally, {{ NUM_USERS }} user accounts have been provisioned.
+As you work through the exercises you will be given various commands you
+need to run from the command line, or you may be asked to enter values
+into the web console.
 
-{% if ETHERPAD_ENABLED %}
-Before continuing, please visit visit the Etherpad at the following URL:
+Most of the commands or sample text can be copy/pasted directly. Others
+will require modification before they can be used.
 
-----
-http://{{ ETHERPAD_URL_PREFIX }}.{{ ROUTER_ADDRESS }}/p/roadshow
-----
-
-Decide on a user account, between user01 and user{{ NUM_USERS }}. Type that user
-account and your name next to it. This will be your user account for the
-duration of these exercises. For example:
-
-----
-userxx Luke Skywalker
-----
-
-If you already see a name next to a user account, it means that someone else has
-already claimed it.
-{% endif %}
-
-You will see various code and command blocks throughout these exercises. Some of
-the command blocks can be copy/pasted directly. Others will require
-modification of the command before execution. If you see a command block with a
-red border (see below), the command will require modification. Typically this is
-a substitution of your username or user number:
+If you see a command or sample text with a red border (see below), the
+text will require modification before it can be used.
 
 [source,role=copypaste]
 ----
 some command for userXX
 ----
+
+Typically any substitution required is that for your assigned user name.
+Check any adjacent description to qualify what may need to be changed.
+
+Because you are using a shared environment with limited resources, and
+quotas are not being enforced, please be considerate of other attendees.
+For example, if you experiment with scaling up an application to have
+multiple instances, limit yourself to at most three instances and scale it
+back down to one instance when you are satisfied it is working as expected.
