@@ -2,7 +2,7 @@
 
 To deploy applications to OpenShift and manage them, OpenShift provides a
 feature rich web console, as well as a command line tool. The OpenShift
-command line client is a single executable called _oc_, written in the Go
+command line client is a single executable called +oc+, written in the Go
 programming language. The command line client is available for the
 following operating systems:
 
@@ -12,7 +12,7 @@ following operating systems:
 
 This workshop will be using both the web console and command line client.
 You therefore need to download the command line client and install it,
-such it that is accessible from the program search path of your command
+such that it is accessible from the program search path of your command
 shell.
 
 ### Downloading the client
@@ -25,7 +25,7 @@ following links:
 - {{DOWNLOAD_CLIENT_LINUX_64BIT}}[Linux (64 Bit)]
 
 Once the file has been downloaded, you will need to extract the contents as
-it is a compressed archive. Put the archive and the extracted _oc_ executable
+it is a compressed archive. Put the archive and the extracted +oc+ executable
 file in the following directory:
 
 **Windows:**
