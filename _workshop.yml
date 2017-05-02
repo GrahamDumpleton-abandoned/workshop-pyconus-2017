@@ -1,0 +1,14 @@
+---
+id: pyconus2017
+name: PyCon US OpenShift Workshop
+
+content:
+  url: https://raw.githubusercontent.com/GrahamDumpleton/workshop-pyconus-2017/master
+
+vars:
+  USER_NAME: "userXX"
+  USER_PASSWORD: "openshift3"
+
+modules:
+  activate:
+  - install
