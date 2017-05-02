@@ -97,14 +97,14 @@ For Windows 10, right click on your computer name inside of the __File
 Explorer__. Select __Advanced System Settings__. Click on the __Advanced
 Tab__, and then finally click on __Environment Variables__. From the
 dialog window, select the __Path__ variable and add `;C:\OpenShift` at the
-end.
+end. The modification will apply to any new terminal window created.
 
 If using __PowerShell__, you could also temporarily modify the executable
 search path for the current terminal window by running:
 
 [source]
 ----
-$Env:Path = "C:\OpenShift;" + $Env:Path
+$Env:Path += ";C:\OpenShift"
 ----
 
 Rather than updating the excutable search path, you could always just copy
@@ -121,22 +121,35 @@ versions of Windows see:
 
 **OS X:**
 
+For OS X you can temporarily modify the executable search path for the
+current terminal window by running:
+
 [source]
 ----
 $ export PATH=$PATH:~/OpenShift
 ----
+
+Alternatively add this line to `~/.bash_profile` and will apply for any
+new terminal window created.
 
 **Linux:**
 
+For Linux you can temporarily modify the executable search path for the
+current terminal window by running:
+
 [source]
 ----
 $ export PATH=$PATH:~/OpenShift
 ----
 
+Alternatively add this line to `~/.bash_profile` and will apply for any
+new terminal window created.
+
 ### Verifying the command line client
 
-At this point, we should have the oc tool available for use.  Let's test this
-out by printing the version of the oc command:
+At this point, the `oc` executable should be found in your executable
+search path and ready to use. Test that the executable can be found and
+runs by running:
 
 [source]
 ----
