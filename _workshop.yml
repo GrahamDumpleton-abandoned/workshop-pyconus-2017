@@ -11,3 +11,7 @@ modules:
   - user-credentials
   - client-installation
   - accessing-openshift
+  - deploy-application
+  - adding-database
+  - linking-database
+  - adding-storage

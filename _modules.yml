@@ -34,3 +34,11 @@ modules:
     name: Client Installation
   accessing-openshift:
     name: Accessing OpenShift
+  deploy-application:
+    name: Deploy Application
+  adding-database:
+    name: Adding Database
+  linking-database:
+    name: Linking Database
+  adding-storage:
+    name: Adding Storage
