@@ -23,7 +23,39 @@ containers. These include:
   existing container image supplied by a third party. OpenShift will pull
   down the nominated image and deploy it.
 
-In this exercise you will deploy a Python web application from its
-application soyrce code in a Git repository.
+In this exercise you will deploy a Python web application from application
+source code hosted in a Git repository hosted by GitHub.
 
 ### Source-to-Image (S2I)
+
+The processing of building the container image from the application source
+code is facilitated using a tool provided by the
+https://github.com/openshift/source-to-image[Source-to-Image (S2I)] project.
+
+The goal of the S2I tool is described as:
+
+[quote]
+----
+Source-to-Image (S2I) is a tool for building reproducible Docker images.
+S2I produces ready-to-run images by injecting source code into a Docker
+image and assembling a new Docker image which incorporates the builder
+image and built source. The result is then ready to use with docker run.
+S2I supports incremental builds which re-use previously downloaded
+dependencies, previously built artifacts, etc.
+----
+
+Visually the process can be depicted as:
+
+image::source-to-image.png[Source-to-Image]
+
+OpenShift runs the S2I process inside a special __Pod__, called a build
+pod, and thus builds are subject to quotas, limits, resource scheduling,
+and other aspects of OpenShift.
+
+A full discussion of S2I is beyond the scope of this workshop, but you can
+find more information about it in the
+https://docs.openshift.org/latest/creating_images/s2i.html[OpenShift S2I documentation]
+or the
+https://github.com/openshift/source-to-image[S2I project repository].
+The only key concept you need to remember about S2I is that it's magic.
+
