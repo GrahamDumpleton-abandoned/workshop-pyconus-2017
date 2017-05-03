@@ -172,3 +172,6 @@ the version of OpenShift being used for this workshop.
 
 If you are having problems ask the instructor or workshop assistants for
 help.
+
+In the next exercise you will use the command line client to login to the
+OpenShift environment, as well as login via the web console.

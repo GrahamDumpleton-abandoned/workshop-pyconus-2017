@@ -112,9 +112,12 @@ as well as get a visual overview of the applications you have deployed.
 To login to the web console for the OpenShift environment used in this
 workshop, visit the URL:
 
-    *link:https://{{CONSOLE_ADDRESS}}[]*
+*link:https://{{CONSOLE_ADDRESS}}[]*
 
-The first screen you will see is the authentication screen.
+As with logging in from the command line, you may get a an error due to the
+use of a self signed certificate. Add an exception to allow the browser to
+communicate with the web site. The first screen you should then see will be
+the user authentication screen.
 
 image::web-console-login.png[Web Console Login]
 
@@ -132,23 +135,25 @@ able to see the project you created above from the command line.
 
 image::web-console-project-list.png[Web Console Project List]
 
-Click on the *{{EXPLORE_PROJECT_NAME}}{{USER_SUFFIX}}* project. When you click on the
-*{{EXPLORE_PROJECT_NAME}}{{USER_SUFFIX}}* project, you will be taken to the project overview page
-which will list all of the routes, services, deployments, and pods that you have
-running as part of your project. There's nothing there now, but that's about to
-change.
+Click on the project you created and you should be taken to the project
+overview page.
 
-image::explore-webconsole2.png[Explore Project]
+The overview page will list details about any applications you have
+deployed in the project. As you haven't yet deployed any application, there
+is nothing to display and the overview page will prompt you to add an
+application.
 
-{% if METRICS_ENABLED %}
+image::web-console-empty-project.png[Web Console Empty Project]
 
-Lastly, the web console will show you an error: _An error occurred getting
-metrics._  We need to accept another self-signed certificate for OpenShift's metrics
-aggregation. If we don't, then the metrics will not display in the OpenShift UI.
+If metrics has been enabled in the OpenShift environment being used for
+this workshop, because a self signed certificate is being used, you will
+see a message indicating that an error occurred getting metrics.
 
-Click the link that says *Open metrics URL*, and accept the certificate.
+image::web-console-enable-metrics.png[Web Console Enable Metrics]
 
-{% endif %}
+Click on the the link that says *Open metrics URL*, and add an exception
+for the certificate.
 
-We will be using a mix of command line tooling and the web console for the labs.
-Get ready!
+In the remainder of this workshop you will be using both the command line
+and the web console. In the next exercise you will deploy your first web
+application.
