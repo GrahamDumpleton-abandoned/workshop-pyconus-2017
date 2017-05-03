@@ -9,7 +9,7 @@ here simply to help you if you have any problems, or to answer any
 questions you may have. The instructor will not be leading you through the
 exercises. The workshop is run in this way to give you the maximum amount
 of time possible to work with and experiment with OpenShift, rather than
-wasting time waiting for the instructor to show you how to do things at
+you needing to wait for the instructor to show you how to do things at
 each step.
 
 The sample application which will be used is a Python web application
