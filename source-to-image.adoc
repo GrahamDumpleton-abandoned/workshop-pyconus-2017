@@ -1,0 +1,51 @@
+## Deploy Application
+
+OpenShift provides different options for building and deploying application
+containers. These include:
+
+- *Build and deploy from application source code* - Users can specify
+  the location of their application source code in a Git repository.
+  OpenShift will build the application using steps appropriate for the
+  programming language and software stack being used, then build a
+  container image that includes the application and deploys it. Users can
+  instead supply a `Dockerfile` as the source for instructions to build the
+  container image. OpenShift will build the container image from the
+  `Dockerfile`, within OpenShift, and deploy it.
+
+- *Build and deploy from application binaries* - Users can specify
+  the location of their application binaries, generated from their existing
+  application build process and tools. OpenShift will build the container
+  image that includes the supplied application binaries and deploy it.
+
+- *Deploy an existing container image* - Users can build the application
+  and container image completely outside of OpenShift, using existing
+  application and container image build processes and tools, or use an
+  existing container image supplied by a third party. OpenShift will pull
+  down the nominated image and deploy it.
+
+In this workshop you will deploy a Python web application from application
+source code hosted in a Git repository hosted by GitHub. The processing of
+building the container image from the application source code is
+facilitated using a tool provided by the
+https://github.com/openshift/source-to-image[Source-to-Image (S2I)]
+project.
+
+The goal of the S2I tool is described as:
+
+"Source-to-Image (S2I) is a tool for building reproducible Docker images.
+S2I produces ready-to-run images by injecting source code into a
+Docker image and assembling a new Docker image which incorporates the
+builder image and built source. The result is then ready to use with
+docker run."
+
+Visually the process can be depicted as:
+
+image::source-to-image.png[Source-to-Image]
+
+A full discussion of S2I is beyond the scope of this workshop, but you can
+find more information about it in the
+https://docs.openshift.org/latest/creating_images/s2i.html[OpenShift S2I documentation]
+or the
+https://github.com/openshift/source-to-image[S2I project repository].
+The only key concept you need to remember about S2I is that it's magic.
+
