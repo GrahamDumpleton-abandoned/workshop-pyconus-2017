@@ -11,7 +11,7 @@ You therefore need to download the command line client and install it,
 such that it can be found on the executable search path of your command
 shell.
 
-### Downloading the client archive
+### Downloading the client package
 
 Download the package archive containing the client for your operating
 system using the following links:
