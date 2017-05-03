@@ -1,1 +1,29 @@
 ## Deploy Application
+
+OpenShift provides different options for building and deploying application
+containers. These include:
+
+- *Build and deploy from application source code* - Users can specify
+  the location of their application source code in a Git repository.
+  OpenShift will build the application using steps appropriate for the
+  programming language and software stack being used, then build a
+  container image that includes the application and deploys it. Users can
+  instead supply a `Dockerfile` as the source for instructions to build the
+  container image. OpenShift will build the container image from the
+  `Dockerfile`, within OpenShift, and deploy it.
+
+- *Build and deploy from application binaries* - Users can specify
+  the location of their application binaries, generated from their existing
+  application build process and tools. OpenShift will build the container
+  image that includes the supplied application binaries and deploy it.
+
+- *Deploy an existing container image* - Users can build the application
+  and container image completely outside of OpenShift, using existing
+  application and container image build processes and tools, or use an
+  existing container image supplied by a third party. OpenShift will pull
+  down the nominated image and deploy it.
+
+In this exercise you will deploy a Python web application from its
+application soyrce code in a Git repository.
+
+### Source-to-Image (S2I)
