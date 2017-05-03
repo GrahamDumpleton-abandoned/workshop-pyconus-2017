@@ -151,8 +151,9 @@ see a message indicating that an error occurred getting metrics.
 
 image::web-console-enable-metrics.png[Web Console Enable Metrics]
 
-Click on the the link that says *Open metrics URL*, and add an exception
-for the certificate.
+Click on the the link that says __Open metrics URL__, and add an exception
+for the certificate. This will enable any charts for metrics to be
+displayed in the web console.
 
 In the remainder of this workshop you will be using both the command line
 and the web console. In the next exercise you will deploy your first web
