@@ -36,8 +36,8 @@ modules:
     name: Accessing OpenShift
   deploy-application:
     name: Deploy Application
-  adding-database:
-    name: Adding Database
+  deploy-database:
+    name: Deploy Database
   linking-database:
     name: Linking Database
   adding-storage:
@@ -46,3 +46,5 @@ modules:
     name: Delete Application
   using-templates:
     name: Using Templates
+  further-resources:
+    name: Further Resources

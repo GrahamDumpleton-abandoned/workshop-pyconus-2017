@@ -12,8 +12,9 @@ modules:
   - client-installation
   - accessing-openshift
   - deploy-application
-  - adding-database
+  - deploy-database
   - linking-database
   - adding-storage
   - delete-application
   - using-templates
+  - further-resources
