@@ -30,13 +30,14 @@ facilitated using a tool provided by the
 https://github.com/openshift/source-to-image[Source-to-Image (S2I)]
 project.
 
-The goal of the S2I tool is described as:
+The S2I project is described as:
 
-"Source-to-Image (S2I) is a tool for building reproducible Docker images.
-S2I produces ready-to-run images by injecting source code into a
-Docker image and assembling a new Docker image which incorporates the
-builder image and built source. The result is then ready to use with
-docker run."
+"Source-to-Image (S2I) is a toolkit and workflow for building reproducible
+Docker images from source code. S2I produces ready-to-run images by
+injecting source code into a Docker container and letting the container
+prepare that source code for execution. By creating self-assembling builder
+images, you can version and control your build environments exactly like
+you use Docker images to version your runtime environments."
 
 Visually the process can be depicted as:
 
@@ -47,5 +48,13 @@ find more information about it in the
 https://docs.openshift.org/latest/creating_images/s2i.html[OpenShift S2I documentation]
 or the
 https://github.com/openshift/source-to-image[S2I project repository].
-The only key concept you need to remember about S2I is that it's magic.
 
+The key concept to understand about S2I is that it takes your application
+source code and creates from it a container image which can then be
+deployed, without you needing to know the specifics of how to construct the
+image.
+
+S2I can be compared to cartridges from OpenShift 2 (prior version of
+OpenShift), or buildpacks from Heroku and Cloud Foundry. The difference
+compared to older systems such as buildpacks, is that S2I has been purpose
+built for creating container images using Docker and OCI image formats.
