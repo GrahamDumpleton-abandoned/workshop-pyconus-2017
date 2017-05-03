@@ -42,3 +42,7 @@ modules:
     name: Linking Database
   adding-storage:
     name: Adding Storage
+  delete-application:
+    name: Delete Application
+  using-templates:
+    name: Using Templates

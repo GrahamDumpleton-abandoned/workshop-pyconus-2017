@@ -15,3 +15,5 @@ modules:
   - adding-database
   - linking-database
   - adding-storage
+  - delete-application
+  - using-templates
