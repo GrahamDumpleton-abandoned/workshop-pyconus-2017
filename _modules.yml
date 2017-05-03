@@ -35,7 +35,7 @@ modules:
   accessing-openshift:
     name: Accessing OpenShift
   source-to-image:
-    name: Source-to-Image (S2I)
+    name: Source-to-Image
   deploy-application:
     name: Deploy Application
   deploy-database:

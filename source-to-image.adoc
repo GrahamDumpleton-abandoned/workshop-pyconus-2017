@@ -1,4 +1,4 @@
-## Source-to-Image (S2I)
+## Source-to-Image
 
 OpenShift provides different options for building and deploying application
 containers. These include:
