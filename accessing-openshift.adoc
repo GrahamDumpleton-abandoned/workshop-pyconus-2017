@@ -105,28 +105,32 @@ to build a new example application in Ruby.
 
 ### Logging into the web console
 
-OpenShift ships with a web-based console that will allow users to perform
-various tasks via a browser. To get a feel for how the web console works,
-open your browser and go to the following URL:
+In addition to the command line client, OpenShift ships with a web console.
+The web console provides you with the ability to perform many common tasks
+as well as get a visual overview of the applications you have deployed.
 
-*link:https://{{CONSOLE_ADDRESS}}[]*
+To login to the web console for the OpenShift environment used in this
+workshop, visit the URL:
 
-The first screen you will see is the authentication screen. Enter in the
-following credentials:
+    *link:https://{{CONSOLE_ADDRESS}}[]*
 
-[source]
+The first screen you will see is the authentication screen.
+
+image::web-console-login.png[Web Console Login]
+
+Enter in the credentials for your assigned user account:
+
+[source,role=copypaste]
 ----
-Username: {{USER_NAME}}
-Password: {{USER_PASSWORD}}
+Username: userXX
+Password: pyconus2017
 ----
 
-image::ocp-login.png[OpenShift Login Screen]
+After you have authenticated to the web console, you will be presented with
+a list of projects that your user has permission to work with. You should be
+able to see the project you created above from the command line.
 
-After you have authenticated to the web console, you will be presented with a
-list of projects that your user has permission to work with. You will see
-something that looks like the following image:
-
-image::explore-webconsole1.png[Web Console]
+image::web-console-project-list.png[Web Console Project List]
 
 Click on the *{{EXPLORE_PROJECT_NAME}}{{USER_SUFFIX}}* project. When you click on the
 *{{EXPLORE_PROJECT_NAME}}{{USER_SUFFIX}}* project, you will be taken to the project overview page
