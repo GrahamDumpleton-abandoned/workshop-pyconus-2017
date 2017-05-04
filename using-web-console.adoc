@@ -17,7 +17,7 @@ https://{{CONSOLE_ADDRESS}}/console/project/project-userXX/overview
 After having added the application to the project, you should now see in
 the project overview page:
 
-image::project-overview-blog-sqlite.png[Blog Site (SQLite)]
+image::project-overview.png[Project Overview]
 
 From here you can access various details of the application you created, or
 using options in the left hand side bar, browse to details on any resources
@@ -27,17 +27,17 @@ well as logs for the running application.
 To view log files, select on **Applications** and then **Pods** from the
 left hand side bar.
 
-image::project-application-pods.png[Browse Application Pods]
+image::pods-menu-item.png[Pods Menu Item]
 
 The list of running instances of your application, as well as completed
 builds will be listed.
 
-image::project-application-pods-list.png[List of Pods]
+image::list-of-pods.png[List of Pods]
 
 Click on the entry for the instance of the running application and select
 the **Logs** tab to see the logs for the application.
 
-image::project-application-logs.png[Application Log]
+image::application-logs.png[Application Logs]
 
 To view the logs for an instance of the running application from the
 command line, you can use the `oc logs` command.
@@ -45,7 +45,7 @@ command line, you can use the `oc logs` command.
 Select on the **Terminal** tab for an instance of the running application
 and you can access the running container from an interactive command shell.
 
-image::project-application-shell.png[Interactive Shell]
+image::application-shell.png[Application Shell]
 
 To obtain an interactive shell in an instance of the running application
 from the command line, you can use the `oc rsh` command.

@@ -121,7 +121,7 @@ use of a self signed certificate. Add an exception to allow the browser to
 communicate with the web site. The first screen you should then see will be
 the user authentication screen.
 
-image::web-console-login.png[Web Console Login]
+image::login-page.png[Login Page]
 
 Enter in the credentials for your assigned user account:
 
@@ -135,7 +135,7 @@ After you have authenticated to the web console, you will be presented with
 a list of projects that your user has permission to work with. You should be
 able to see the project you created above from the command line.
 
-image::web-console-project-list.png[Web Console Project List]
+image::project-list.png[Project List]
 
 Click on the project you created and you should be taken to the project
 overview page.
@@ -146,13 +146,13 @@ is nothing to display and the overview page will prompt you to add an
 application. Don't select it just yet, we will get to deploying an
 application later.
 
-image::web-console-empty-project.png[Web Console Empty Project]
+image::empty-project.png[Empty Project]
 
 If metrics have been enabled in the OpenShift environment being used for
 this workshop, because a self signed certificate is being used, you will
 see a message indicating that an error occurred getting metrics.
 
-image::web-console-enable-metrics.png[Web Console Enable Metrics]
+image::metrics.png[Enable Metrics]
 
 Click on the the link that says __Open metrics URL__, and add an exception
 for the certificate. This will enable any charts for metrics to be
