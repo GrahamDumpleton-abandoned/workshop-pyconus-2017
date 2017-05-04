@@ -1,1 +1,40 @@
-## Expose Service
+## Expose Application
+
+The Python web application has now been built and deployed. At this point
+though it isn't yet accessible. This is because the steps used to create it
+from the command line did not expose it automatically outside of the
+OpenShift environment.
+
+In order to expose the application externally as a HTTP service, it is
+necessary to create a route which maps a public URL to the application.
+
+This is done as a separate step as you don't always want an application to
+be automatically available. You may for example be deploying microservices
+which should only be visible to the front end web application running in
+the same environment.
+
+### Project overview
+
+The creation of a route and making the application visible outside of the
+OpenShift environment can be done from the command line or the web console.
+This time we will use the web console. You can also use this time to
+explore what information is available about the application from the web
+console.
+
+In your web browser where you previously logged into the web console,
+return to the project overview page of the project you created, or go
+to the URL:
+
+[source,role=copypaste]
+----
+https://{{CONSOLE_ADDRESS}}/console/project/project-userXX/overview
+----
+
+After having added the application to the project, you should now see:
+
+image::project-overview-blog-sqlite.png[Blog Site (SQLite)]
+
+### Creating a route
+
+
+### Using the application
