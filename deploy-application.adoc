@@ -97,9 +97,48 @@ po/blog-1-build   1/1       Running   0          8s
 The resources hold information such as how to build the application source
 code, the location of the image created and how to deploy it.
 
-The resource `builds/blog-1` in the above list corresponds to the build
-which is currently running to build an image from the source code of the
-application.
+To view a summary of a specific resource, you can use the `oc describe`
+command. For example, to view the build configuration run the command:
+
+[source]
+----
+oc describe bc/blog
+----
+
+This will display output similar to:
+
+[source]
+----
+Name:           blog
+Namespace:      project-user00
+Created:        11 seconds ago
+Labels:         app=blog
+Annotations:    openshift.io/generated-by=OpenShiftNewApp
+Latest Version: 1
+
+Strategy:       Source
+URL:            https://github.com/openshift-katacoda/blog-django-py
+From Image:     ImageStreamTag openshift/python:3.5
+Output to:      ImageStreamTag blog:latest
+
+Build Run Policy:       Serial
+Triggered by:           Config, ImageChange
+Webhook GitHub:
+        URL:    https://localhost:8443/oapi/v1/namespaces/project-user00/buildconfigs/blog/webhooks/YyKz-gEjFJ9HKL-mRJC6/github
+Webhook Generic:
+        URL:            https://localhost:8443/oapi/v1/namespaces/project-user00/buildconfigs/blog/webhooks/rslDLLUiZiwcKXFsc02i/generic
+        AllowEnv:       false
+
+Build   Status          Duration        Creation Time
+blog-1  running         running for 8s  2017-05-04 11:10:03 +1000 AEST
+
+No events.
+----
+
+The resource `builds/blog-1` in the above list of resources corresponds to
+the build which is currently running to build an image from the source code
+of the application. You can see that it is still running in the summary of
+the build configuration for the application.
 
 To monitor the build process and see what is being done, run the command:
 
@@ -128,5 +167,10 @@ LIBRARY_PATH=/opt/rh/httpd24/root/usr/lib64
 PYTHONUNBUFFERED=1
 ....
 ----
+
+In the log output you will see how the Python S2I builder will pull down
+the application source code from the Git repository, install any Python
+packages listed in the Python `requirements.txt` file and prepare the
+application image to be deployed.
 
 ### Exposing the application
