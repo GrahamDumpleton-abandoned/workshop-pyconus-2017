@@ -42,7 +42,7 @@ blog site in the banner. Your new post should also appear on the home page.
 
 At this point take note of the name which appeans in the banner underneath
 the name of the blog site. For the examples displayed in these instructions
-this is `blog-2-6sl3c`. This is the name of the **Pod** in which the
+this is `blog-2-6sl3c`. This is the name of the _Pod_ in which the
 instance of the application is currently running.
 
 You can get a listing of all pods for running instances of the application
@@ -55,7 +55,9 @@ oc get pods --selector app=blog
 
 The `--selector app=blog` argument ensures that the command only lists pods
 which are for this application by looking for the label `app=blog`. This
-label was applied automatically by the `oc new-app` command.
+label was added automatically to all resources created for the application
+by the `oc new-app` command. It is also added to any dynamic resources
+such as the pods.
 
 The `oc get pods` command will display output similar to:
 
@@ -94,8 +96,8 @@ oc get pods --selector app=blog
 ----
 
 and you will see that although the pod was deleted, causing the instance of
-the application to be killed, it was replaced with a new instance, where
-the pod now has a new name.
+the application to be killed, it was replaced with a new instance, with
+the pod now having a new name.
 
 [source]
 ----
@@ -111,6 +113,6 @@ site has gone. This is because the SQLite database which was being used was
 local to the container the application was running in. When the pod was
 killed, the container was destroyed and so any data saved had been lost.
 
-To provide persistence for the blog posts you add, you would need to use
-a separate database which is attached to a persistent volume, so that data
-is preserved across restarts of the database.
+To provide persistence for the blog posts you add, any database used will
+need to have an attached persistent volume into which to store data, so
+that is preserved across restarts of the database.
