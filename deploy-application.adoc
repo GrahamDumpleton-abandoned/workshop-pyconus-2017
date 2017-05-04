@@ -173,4 +173,46 @@ the application source code from the Git repository, install any Python
 packages listed in the Python `requirements.txt` file and prepare the
 application image to be deployed.
 
-### Exposing the application
+### Triggering a new build
+
+For this workshop, you are deploying the Python web application from an
+existing Git repository and cannot change the source code. If this was your
+own application, or you had forked the Git repository on GitHub before
+starting, you would be able to make updates.
+
+After you make any updates you can trigger a new build and deployment of
+the application by running the command:
+
+[source]
+----
+oc start-build blog
+----
+
+This will display output:
+
+[source]
+----
+build "blog-2" started
+----
+
+This will cause the latest application source code to be pulled down from
+the Git repository, built into a new image and deployed.
+
+Although not covered in this workshop, you can automate builds and
+deployments by registering the GitHub Webhook displayed when you ran `oc
+describe bc/blog` with the Git repository on GitHub. After the webhook has
+been registered, any push of new code up to the Git repository on GitHub
+will automatically trigger a new build and deployment.
+
+If you wish to iterate on code changes in a local directory, prior to
+commiting and pushing them up to a Git repository, it is also possible to
+start a new build, but where rather than the application source code being
+pulled down from the Git repository, it is taken from a local directory on
+your computer.
+
+If you would like to know more about setting up automated builds, or
+building from local source code, ask the instructor or workshop assistants
+when you have completed the workshop and if time is still available we can
+provide more details on how to do it. Links to documentation are also
+provided for these features in the resources section at the end of the
+workshop notes.
