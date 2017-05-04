@@ -40,7 +40,7 @@ image::blog-post-sample.png[Blog Post Sample]
 Return to the home page for the blog site by clicking on the name of the
 blog site in the banner. Your new post should also appear on the home page.
 
-At this point take note of the name which appeans in the banner underneath
+At this point take note of the name which appears in the banner underneath
 the name of the blog site. For the examples displayed in these instructions
 this is `blog-2-6sl3c`. This is the name of the _Pod_ in which the
 instance of the application is currently running.
@@ -115,4 +115,4 @@ killed, the container was destroyed and so any data saved had been lost.
 
 To provide persistence for the blog posts you add, any database used will
 need to have an attached persistent volume into which to store data, so
-that is preserved across restarts of the database.
+that it is preserved across restarts of the application and database.
