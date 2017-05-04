@@ -1,1 +1,58 @@
 ## Deploy Application
+
+The Python web application you are going to deploy in this workshop is a
+small blog site implemented using the Django web framework.
+
+The source code for the application can be found in the Git repository on
+GitHub at:
+
+*link:https://github.com/openshift-katacoda/blog-django-py*
+
+You will deploy the application using the Python S2I builder image which is
+bundled with OpenShift. It is possible to use either the web console or the
+command line client to deploy the application. For this exercise you will
+be using the command line.
+
+### Creating the application
+
+To deploy the sample application from the command line run the command:
+
+[source]
+----
+oc new-app python~https://github.com/openshift-katacoda/blog-django-py --name blog
+----
+
+We use the `--name` option so we can override the name for the resources
+which are created for this application. If the `--name` option was not used
+it would have used `blog-django-py`, being the name of the Git repository.
+
+The output from running the command should be similar to:
+
+[source]
+----
+--> Found image c918544 (7 days old) in image stream "openshift/python" under tag "3.5" for "python"
+
+    Python 3.5
+    ----------
+    Platform for building and running Python 3.5 applications
+
+    Tags: builder, python, python35, rh-python35
+
+    * A source build using source code from https://github.com/openshift-katacoda/blog-django-py will be created
+      * The resulting image will be pushed to image stream "blog:latest"
+      * Use 'start-build' to trigger a new build
+    * This image will be deployed in deployment config "blog"
+    * Port 8080/tcp will be load balanced by service "blog"
+      * Other containers can access this service through the hostname "blog"
+
+--> Creating resources ...
+    imagestream "blog" created
+    buildconfig "blog" created
+    deploymentconfig "blog" created
+    service "blog" created
+--> Success
+    Build scheduled, use 'oc logs -f bc/blog' to track its progress.
+    Run 'oc status' to view your app.
+----
+
+### Exposing the application
