@@ -152,7 +152,7 @@ If metrics have been enabled in the OpenShift environment being used for
 this workshop, because a self signed certificate is being used, you will
 see a message indicating that an error occurred getting metrics.
 
-image::metrics.png[Enable Metrics]
+image::enable-metrics.png[Enable Metrics]
 
 Click on the the link that says __Open metrics URL__, and add an exception
 for the certificate. This will enable any charts for metrics to be
