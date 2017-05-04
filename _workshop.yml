@@ -15,6 +15,7 @@ modules:
   - deploy-application
   - using-web-console
   - expose-application
+  - testing-application
   - deploy-database
   - linking-database
   - adding-storage

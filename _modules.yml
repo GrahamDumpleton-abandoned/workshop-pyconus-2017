@@ -42,6 +42,8 @@ modules:
     name: Using Web Console
   expose-application:
     name: Expose Application
+  testing-application:
+    name: Testing Application
   deploy-database:
     name: Deploy Database
   linking-database:
