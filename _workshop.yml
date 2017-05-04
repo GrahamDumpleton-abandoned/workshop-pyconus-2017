@@ -13,6 +13,7 @@ modules:
   - accessing-openshift
   - source-to-image
   - deploy-application
+  - expose-application
   - deploy-database
   - linking-database
   - adding-storage

@@ -38,6 +38,8 @@ modules:
     name: Source-to-Image
   deploy-application:
     name: Deploy Application
+  expose-application:
+    name: Expose Application
   deploy-database:
     name: Deploy Database
   linking-database:
