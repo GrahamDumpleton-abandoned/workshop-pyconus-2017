@@ -19,14 +19,14 @@ This time we will use the web console.
 
 ### Creating the route
 
-From the project overview page, select the **Create Route** link display
+From the project overview page, select the **Create Route** link displayed
 top right of the summary details for the application.
 
 image::project-overview-create-route.png[Create Route]
 
 This will bring up a page for entering the details of the route to be
-created which expose the application outside of the OpenShift environment
-as a HTTP service.
+created and which will expose the application outside of the OpenShift
+environment as a HTTP service.
 
 image::project-application-create-route-details.png[Create Route Details]
 
@@ -40,7 +40,7 @@ environment.
 
 image::route-created.png[Route Created]
 
-Click on the URL which is now displayed on the project overview page for
-the application to visit the web application.
+Click on the URL for the application which is now displayed on the project
+overview page to visit the web application.
 
 image::blog-home-page.png[Blog Home Page]
