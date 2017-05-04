@@ -6,7 +6,7 @@ small blog site implemented using the Django web framework.
 The source code for the application can be found in the Git repository on
 GitHub at:
 
-*link:https://github.com/openshift-katacoda/blog-django-py*
+*link:https://github.com/openshift-katacoda/blog-django-py[]*
 
 You will deploy the application using the Python S2I builder image which is
 bundled with OpenShift. It is possible to use either the web console or the
@@ -23,7 +23,7 @@ oc new-app python~https://github.com/openshift-katacoda/blog-django-py --name bl
 ----
 
 We use the `--name` option so we can override the name for the resources
-which are created for this application. If the `--name` option was not used
+which are created for the application. If the `--name` option was not used
 it would have used `blog-django-py`, being the name of the Git repository.
 
 The output from running the command should be similar to:
@@ -53,6 +53,80 @@ The output from running the command should be similar to:
 --> Success
     Build scheduled, use 'oc logs -f bc/blog' to track its progress.
     Run 'oc status' to view your app.
+----
+
+In this case we did not specify a specific Python version, so it used the
+latest version supported by the environment, which was Python 3.5. You can
+specify that a specific Python version should be used, such as Python 2.7,
+in the `oc new-app` command. Instead of just `python`, you would specify
+`python:2.7`.
+
+### Monitoring the build process
+
+To see the list of resources which are created for the application run
+the command:
+
+[source]
+----
+oc get all
+----
+
+This will display a list similar to:
+
+[source]
+----
+NAME      TYPE      FROM      LATEST
+bc/blog   Source    Git       1
+
+NAME            TYPE      FROM          STATUS    STARTED         DURATION
+builds/blog-1   Source    Git@fcdc38c   Running   6 seconds ago
+
+NAME      DOCKER REPO                           TAGS      UPDATED
+is/blog   172.30.1.1:5000/project-user00/blog
+
+NAME      REVISION   DESIRED   CURRENT   TRIGGERED BY
+dc/blog   0          1         0         config,image(blog:latest)
+
+NAME       CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+svc/blog   172.30.212.64   <none>        8080/TCP   8s
+
+NAME              READY     STATUS    RESTARTS   AGE
+po/blog-1-build   1/1       Running   0          8s
+----
+
+The resources hold information such as how to build the application source
+code, the location of the image created and how to deploy it.
+
+The resource `builds/blog-1` in the above list corresponds to the build
+which is currently running to build an image from the source code of the
+application.
+
+To monitor the build process and see what is being done, run the command:
+
+[source]
+----
+oc logs builds/blog-1 --follow
+----
+
+This will display output starting out with:
+
+[source]
+----
+Cloning "https://github.com/openshift-katacoda/blog-django-py" ...
+        Commit: fcdc38c5448596f772e337cf847d3bff3408b820 (Change default colour to match OpenShift red.)
+        Author: Graham Dumpleton <Graham.Dumpleton@gmail.com>
+        Date:   Fri Mar 31 18:22:24 2017 +1100
+-----> Running application assemble script.
+-----> Running /opt/app-root/src/.s2i/action_hooks/pre_build
+-----> Initial environment variables set by builder image.
+MANPATH=/opt/rh/rh-python35/root/usr/share/man:/opt/rh/httpd24/root/usr/share/man:
+HOSTNAME=blog-1-build
+PIP_NO_CACHE_DIR=off
+OPENSHIFT_BUILD_COMMIT=fcdc38c5448596f772e337cf847d3bff3408b820
+OPENSHIFT_BUILD_NAME=blog-1
+LIBRARY_PATH=/opt/rh/httpd24/root/usr/lib64
+PYTHONUNBUFFERED=1
+....
 ----
 
 ### Exposing the application
