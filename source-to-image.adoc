@@ -43,6 +43,9 @@ Visually the process can be depicted as:
 
 image::source-to-image.png[Source-to-Image]
 
+OpenShift provides S2I builder images for a range of programming languages
+and environments, including support for Java, NodeJS, PHP, Python and Ruby.
+
 A full discussion of S2I is beyond the scope of this workshop, but you can
 find more information about it in the
 https://docs.openshift.org/latest/creating_images/s2i.html[OpenShift S2I documentation]
