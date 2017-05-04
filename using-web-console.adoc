@@ -24,7 +24,7 @@ using options in the left hand side bar, browse to details on any resources
 that have been created in the project. You can also access build logs, as
 well as logs for the running application.
 
-To view log files, select on **Applications** and then **Pods** from the
+To view log files, select on _Applications_ and then _Pods_ from the
 left hand side bar.
 
 image::pods-menu-item.png[Pods Menu Item]
@@ -35,14 +35,14 @@ builds will be listed.
 image::list-of-pods.png[List of Pods]
 
 Click on the entry for the instance of the running application and select
-the **Logs** tab to see the logs for the application.
+the _Logs_ tab to see the logs for the application.
 
 image::application-logs.png[Application Logs]
 
 To view the logs for an instance of the running application from the
 command line, you can use the `oc logs` command.
 
-Select on the **Terminal** tab for an instance of the running application
+Select on the _Terminal_ tab for an instance of the running application
 and you can access the running container from an interactive command shell.
 
 image::application-shell.png[Application Shell]

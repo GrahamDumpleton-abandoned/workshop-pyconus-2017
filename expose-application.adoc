@@ -17,7 +17,7 @@ The creation of a route and making the application visible outside of the
 OpenShift environment can be done from the command line or the web console.
 This time we will use the web console.
 
-From the project overview page, select the **Create Route** link displayed
+From the project overview page, select the _Create Route_ link displayed
 top right of the summary details for the application.
 
 image::create-route.png[Create Route]
