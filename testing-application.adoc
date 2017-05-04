@@ -73,8 +73,8 @@ application running, but if there was more than one, you would see multiple
 pods listed.
 
 To demonstrate how OpenShift manages your application and ensures that it
-is always running, you are now going to kill the pods for the running
-instances of the application. To do that you can run the command:
+is always running, you can kill the pods for the running instances of the
+application. To do that you can run the command:
 
 [source]
 ----
