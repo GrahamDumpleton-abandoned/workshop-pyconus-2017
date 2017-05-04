@@ -1,0 +1,51 @@
+## Using Web Console
+
+In addition to being able to run commands using the command line client,
+many operations can also be triggered from the web console. The web console
+also provides a more visual way of seeing information about what
+applications are deployed.
+
+In your web browser where you previously logged into the web console,
+return to the project overview page of the project you created, or go
+to the URL:
+
+[source,role=copypaste]
+----
+https://{{CONSOLE_ADDRESS}}/console/project/project-userXX/overview
+----
+
+After having added the application to the project, you should now see in
+the project overview page:
+
+image::project-overview-blog-sqlite.png[Blog Site (SQLite)]
+
+From here you can access various details of the application you created, or
+using options in the left hand side bar, browse to details on any resources
+that have been created in the project. You can also access build logs, as
+well as logs for the running application.
+
+To view log files, select on **Applications** and then **Pods** from the
+left hand side bar.
+
+image::project-application-pods.png[Browse Application Pods]
+
+The list of running instances of your application, as well as completed
+builds will be listed.
+
+image::project-application-pods-list.png[List of Pods]
+
+Click on the entry for the instance of the running application and select
+the **Logs** tab to see the logs for the application.
+
+image::project-application-logs.png[Application Log]
+
+To view the logs for an instance of the running application from the
+command line, you can use the `oc logs` command.
+
+Select on the **Terminal** tab for an instance of the running application
+and you can access the running container from an interactive command shell.
+
+image::project-application-shell.png[Interactive Shell]
+
+To obtain an interactive shell in an instance of the running application
+from the command line, you can use the `oc rsh` command.

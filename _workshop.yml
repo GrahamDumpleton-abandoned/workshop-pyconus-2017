@@ -13,10 +13,10 @@ modules:
   - accessing-openshift
   - source-to-image
   - deploy-application
+  - using-web-console
   - expose-application
   - deploy-database
   - linking-database
   - adding-storage
   - delete-application
-  - using-templates
   - further-resources

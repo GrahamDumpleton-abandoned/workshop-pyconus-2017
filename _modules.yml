@@ -38,6 +38,8 @@ modules:
     name: Source-to-Image
   deploy-application:
     name: Deploy Application
+  using-web-console:
+    name: Using Web Console
   expose-application:
     name: Expose Application
   deploy-database:
@@ -48,7 +50,5 @@ modules:
     name: Adding Storage
   delete-application:
     name: Delete Application
-  using-templates:
-    name: Using Templates
   further-resources:
     name: Further Resources
