@@ -1,1 +1,116 @@
 ## Testing Application
+
+Now that the web application for the blog site is running and it is exposed
+publicly, test that the application is working and you can post new items.
+
+With this initial deployment, a database for the site has been automatically
+setup using the SQLite database and a user account created. An intial set
+of posts has already been added.
+
+To test that you can post additional items, you first need to log into the
+blog site. Click on the image top right with the silhouette of a person.
+
+image::blog-login-icon.png[Blog Login Icon]
+
+This will bring you to the login page.
+
+image::blog-login-page.png[Blog Login Page]
+
+Enter in the login credentials of:
+
+[source]
+----
+Username: developer
+Password: developer
+----
+
+When you have logged in successfully, the image top right will change to a
+plus symbol. This can be selected to add a new blog post.
+
+image::blog-login-page.png[Blog Login Page]
+
+Fill in the details for a new post and save it.
+
+image::blog-post-entry.png[Blog Post Entry]
+
+You should then see the post you added.
+
+image::blog-post-sample.png[Blog Post Sample]
+
+Return to the home page for the blog site by clicking on the name of the
+blog site in the banner. Your new post should also appear on the home page.
+
+At this point take note of the name which appeans in the banner underneath
+the name of the blog site. For the examples displayed in these instructions
+this is `blog-2-6sl3c`. This is the name of the **Pod** in which the
+instance of the application is currently running.
+
+You can get a listing of all pods for running instances of the application
+by running:
+
+[source]
+----
+oc get pods --selector app=blog
+----
+
+The `--selector app=blog` argument ensures that the command only lists pods
+which are for this application by looking for the label `app=blog`. This
+label was applied automatically by the `oc new-app` command.
+
+The `oc get pods` command will display output similar to:
+
+[source]
+----
+NAME           READY     STATUS    RESTARTS   AGE
+blog-2-6sl3c   1/1       Running   0          6h
+----
+
+The name of the pod shown should be the same as what you are seeing in the
+banner of the blog site. In this case we only have one instance of the
+application running, but if there was more than one, you would see multiple
+pods listed.
+
+To demonstrate how OpenShift manages your application and ensures that it
+is always running, you are now going to kill the pods for the running
+instances of the application. To do that you can run the command:
+
+[source]
+----
+oc delete pod --selector app=blog
+----
+
+This will display output similar to:
+
+[source]
+----
+pod "blog-2-6sl3c" deleted
+----
+
+Run the command:
+
+[source]
+----
+oc get pods --selector app=blog
+----
+
+and you will see that although the pod was deleted, causing the instance of
+the application to be killed, it was replaced with a new instance, where
+the pod now has a new name.
+
+[source]
+----
+NAME           READY     STATUS    RESTARTS   AGE
+blog-2-8j24m   1/1       Running   0          26s
+----
+
+Refresh the web page for the blog site and you will see that the name of
+the new pod is now what is shown in the banner for the site.
+
+What you may also have noticed is that the new post you had added to the
+site has gone. This is because the SQLite database which was being used was
+local to the container the application was running in. When the pod was
+killed, the container was destroyed and so any data saved had been lost.
+
+To provide persistence for the blog posts you add, you would need to use
+a separate database which is attached to a persistent volume, so that data
+is preserved across restarts of the database.
