@@ -14,7 +14,7 @@ In order to login using the `oc` command line client, run the command:
 
 [source]
 ----
-$ oc login {{CONSOLE_ADDRESS}}
+oc login {{CONSOLE_ADDRESS}}
 ----
 
 You may see the following output:
@@ -43,7 +43,7 @@ following command instead:
 
 [source]
 ----
-$ oc login {{CONSOLE_ADDRESS}} --insecure-skip-tls-verify=true
+oc login {{CONSOLE_ADDRESS}} --insecure-skip-tls-verify=true
 ----
 ====
 
@@ -87,7 +87,7 @@ project. Create a new project which incorporates your user name by running:
 
 [source,role=copypaste]
 ----
-$ oc new-project project-userXX
+oc new-project project-userXX
 ----
 
 You should see the following message to confirm the creation of the project.

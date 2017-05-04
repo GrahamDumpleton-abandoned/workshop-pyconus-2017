@@ -66,7 +66,7 @@ the file. Once you are in the directory, enter in the following command:
 
 [source]
 ----
-$ unzip openshift-origin-client-tools-{{OC_CLIENT_VERSION}}-mac.zip
+unzip openshift-origin-client-tools-{{OC_CLIENT_VERSION}}-mac.zip
 ----
 
 **Linux:**
@@ -76,7 +76,7 @@ the file. Once you are in the directory, enter in the following command:
 
 [source]
 ----
-$ tar --strip-components 1 -xvzf openshift-origin-client-tools-{{OC_CLIENT_VERSION}}-linux-64bit.tar.gz
+tar --strip-components 1 -xvzf openshift-origin-client-tools-{{OC_CLIENT_VERSION}}-linux-64bit.tar.gz
 ----
 
 The result should be that you can see the `oc` executable file located in
@@ -125,7 +125,7 @@ current terminal window by running:
 
 [source]
 ----
-$ export PATH=$PATH:~/OpenShift
+export PATH=$PATH:~/OpenShift
 ----
 
 Alternatively add this line to `~/.bash_profile` and it will apply for any
@@ -138,7 +138,7 @@ current terminal window by running:
 
 [source]
 ----
-$ export PATH=$PATH:~/OpenShift
+export PATH=$PATH:~/OpenShift
 ----
 
 Alternatively add this line to `~/.bash_profile` and it will apply for any
@@ -152,7 +152,7 @@ runs by running:
 
 [source]
 ----
-$ oc version
+oc version
 ----
 
 You should see the following (or something similar):
