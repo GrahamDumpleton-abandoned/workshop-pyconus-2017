@@ -200,9 +200,9 @@ the Git repository, built into a new image and deployed.
 
 Although not covered in this workshop, you can automate builds and
 deployments by registering the GitHub Webhook displayed when you ran `oc
-describe bc/blog` with the Git repository on GitHub. After the webhook has
-been registered, any push of new code up to the Git repository on GitHub
-will automatically trigger a new build and deployment.
+describe` on the build configuration with the Git repository on GitHub.
+After the webhook has been registered, any push of new code up to the Git
+repository on GitHub will automatically trigger a new build and deployment.
 
 If you wish to iterate on code changes in a local directory, prior to
 commiting and pushing them up to a Git repository, it is also possible to
