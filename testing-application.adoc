@@ -27,7 +27,7 @@ Password: developer
 When you have logged in successfully, the image top right will change to a
 plus symbol. This can be selected to add a new blog post.
 
-image::blog-login-page.png[Blog Login Page]
+image::blog-add-post.png[Blog Add Post]
 
 Fill in the details for a new post and save it.
 
