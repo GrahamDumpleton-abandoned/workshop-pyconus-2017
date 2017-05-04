@@ -13,7 +13,7 @@ be automatically available. You may for example be deploying microservices
 which should only be visible to the front end web application running in
 the same environment.
 
-### Project overview
+### Using the web console
 
 The creation of a route and making the application visible outside of the
 OpenShift environment can be done from the command line or the web console.
@@ -30,9 +30,33 @@ to the URL:
 https://{{CONSOLE_ADDRESS}}/console/project/project-userXX/overview
 ----
 
-After having added the application to the project, you should now see:
+After having added the application to the project, you should now see in
+the project overview page:
 
 image::project-overview-blog-sqlite.png[Blog Site (SQLite)]
+
+From here you access various details of the application you created, or
+using options in the left hand side bar, browse to details on specific
+resources that have been created in the project. You can also access build
+logs for the application, as well as logs for the running application.
+
+To view log files, select on **Applications** and then **Pods** from the
+left hand side bar.
+
+image::project-application-pods.png[Browse Application Pods]
+
+The list of running instances of your application, as well as completed
+builds will be listed.
+
+Click on the entry for the instance of the running application and select
+the **Logs** tab to see the logs for the application.
+
+image::project-application-logs.png[Application Log]
+
+Select on the **Terminal** tab for an instance of the running application
+and you can access the running container from an interactive command shell.
+
+image::project-application-shell.png[Interactive Shell]
 
 ### Creating a route
 
