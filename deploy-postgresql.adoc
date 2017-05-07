@@ -11,4 +11,20 @@ an instance of a PostgreSQL database that can be used. Specifying that
 PostgreSQL should be deployed, can done from the web console when adding a
 new application to a project.
 
-### Adding applications from the web console
+On the overview page of the web console, select _Add to project_ in the
+top menu bar.
+
+image::add-to-project.png[Add to Project]
+
+This will bring up the browser for the catalog of applications which you
+can deploy.
+
+image::browse-catalog.png[Browse Catalog]
+
+Select on the _Datastores_ category. This should bring up a list of SQL
+databases and NoSQL datastores that you can deploy.
+
+image::datastores-catalog.png[Datastores Catalog]
+
+Select on _PostgreSQL (Persistent)_. This will start the flow for deploying
+an instance of the PostgreSQL database with persistent storage attached.
