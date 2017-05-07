@@ -16,7 +16,7 @@ modules:
   - using-web-console
   - expose-application
   - testing-application
-  - deploy-database
+  - deploy-postgresql
   - linking-database
   - adding-storage
   - delete-application

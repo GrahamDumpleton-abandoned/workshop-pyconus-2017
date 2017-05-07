@@ -44,8 +44,8 @@ modules:
     name: Expose Application
   testing-application:
     name: Testing Application
-  deploy-database:
-    name: Deploy Database
+  deploy-postgresql:
+    name: Deploy PostgreSQL
   linking-database:
     name: Linking Database
   adding-storage:

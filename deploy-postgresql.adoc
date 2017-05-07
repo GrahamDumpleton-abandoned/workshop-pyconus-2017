@@ -1,0 +1,14 @@
+## Deploy PostgreSQL
+
+In order to provide persistence to the SQLite database currently being
+used, a persistent volume could be attached to the container the
+application is running in and the SQLite database stored in it. For a
+production system, it is preferable though to use a separate database
+server product such as PostgreSQL.
+
+In order to switch from SQLite to PostgreSQL you will first need to deploy
+an instance of a PostgreSQL database that can be used. Specifying that
+PostgreSQL should be deployed, can done from the web console when adding a
+new application to a project.
+
+### Adding applications from the web console
