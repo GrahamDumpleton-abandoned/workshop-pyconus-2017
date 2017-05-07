@@ -42,3 +42,12 @@ Click on the URL for the application which is now displayed on the project
 overview page to visit the web application.
 
 image::blog-home-page.png[Blog Home Page]
+
+If you had wanted to use the command line client to expose the web
+application, rather than use the web console, you could have instead run
+the command:
+
+[source]
+----
+oc expose svc/blog
+----
