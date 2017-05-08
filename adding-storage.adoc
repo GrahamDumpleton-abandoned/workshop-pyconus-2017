@@ -1,1 +1,24 @@
 ## Adding Storage
+
+[source]
+----
+oc set volume dc/blog --add --name=blog-images -t pvc --claim-name=blog-images --claim-size=1G -m /opt/app-root/src/media
+----
+
+[source]
+----
+persistentvolumeclaims/blog-images
+deploymentconfig "blog" updated
+----
+
+[source]
+----
+oc get pvc
+----
+
+[source]
+----
+NAME          STATUS    VOLUME    CAPACITY   ACCESSMODES   AGE
+blog-db       Bound     pv0033    100Gi      RWO,ROX,RWX   3h
+blog-images   Bound     pv0017    100Gi      RWO,ROX,RWX   15s
+----
