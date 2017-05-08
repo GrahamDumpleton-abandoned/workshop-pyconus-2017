@@ -152,7 +152,7 @@ oc delete pod --selector app=blog
 Unlike before when the SQLite database was being used, the new post that
 you added should still be present.
 
-This is obviously was the case though as you only restarted the web
+This is obviously the case though as you only restarted the web
 application and the data is being stored in the separate PostrgreSQL
 instance.
 

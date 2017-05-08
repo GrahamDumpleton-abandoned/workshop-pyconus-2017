@@ -7,13 +7,14 @@ In this workshop you
   restarts.
 
 - Deployed a PostgreSQL database, linked the Python web application up to
-  the database and initialise the database. The PostgreSQL database used
-  a persistent volume for data storage so that contents of posts, which are
-  stored in the database, are preserved across restarts of the database.
+  the database and initialised the database. The PostgreSQL database used
+  a persistent volume for data storage so that contents of posts, which
+  were stored in the database, are preserved across restarts of the
+  database.
 
 - Attached a persistent volume to the Python web application for storage of
-  images uploaded with posts, so that they are preserved across restarts of
-  the web application.
+  images uploaded with posts, which were stored in the file system, so that
+  they are preserved across restarts of the web application.
 
 The exercices show how OpenShift can be used not only for deploying
 stateless web applications, but also applications require persistent file

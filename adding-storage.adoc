@@ -37,7 +37,8 @@ are retained across restarts, it is necessary to mount a persistent volume
 into the container for the web application.
 
 You can claim a persistent volume and mount it into the web application
-container by running the command:
+container at the directory where uploaded images are being stored, by
+running the command:
 
 [source]
 ----
