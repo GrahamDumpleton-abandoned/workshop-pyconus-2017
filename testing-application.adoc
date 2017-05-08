@@ -29,7 +29,8 @@ plus symbol. This can be selected to add a new blog post.
 
 image::blog-add-post.png[Blog Add Post]
 
-Fill in the details for a new post and save it.
+Fill in the details for a new post and save it. Don't add any image at this
+point, only text.
 
 image::blog-post-entry.png[Blog Post Entry]
 
