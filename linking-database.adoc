@@ -1,8 +1,8 @@
 ## Linking Database
 
-To link the web application with the database, a number of techniques could
-be used. The simplest is to use an environment variable which passes the
-database connection string to the web application.
+To configure the web application so it knows about the database, you can
+use an environment variable which passes the database connection string to
+the web application.
 
 For the database details:
 
@@ -39,7 +39,7 @@ deploymentconfig "blog" updated
 ----
 
 Updating the configuration for the deployment configuratin will result in
-the web application being automatically redeployed with the new environment
+the web application being automatically re-deployed with the new environment
 variable being set.
 
 You can verify what environment variables should be passed from the
