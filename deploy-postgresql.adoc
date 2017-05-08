@@ -28,3 +28,33 @@ image::datastores-catalog.png[Datastores Catalog]
 
 Select on _PostgreSQL (Persistent)_. This will start the flow for deploying
 an instance of the PostgreSQL database with persistent storage attached.
+
+image::create-database.png[Create Database]
+
+On this form, override the values for the following settings, using the
+new values shown:
+
+* *Database Service Name*: `blog-db`
+* *PostgreSQL Connection Username*: `username`
+* *PostgreSQL Connection Password*: `password`
+* *PostgreSQL Database Name*: `blog`
+
+If you do not supply a username and password then the values of those
+fields will be automatically populated, but we want to fix the values to a
+known value as we will use them later when configuring the web application
+to use the database.
+
+When you have updated the values of the four fields, click on _Create_
+at the bottom of the form to start the deployment process. This will bring
+up a page to confirm the details used.
+
+image::database-details.png[Database Details]
+
+Select on _Go to overview_ to watch as the deployment occurs. When the
+deployment can completed, the overview page should show the web application
+for the blog and the database.
+
+image::database-deployed.png[Database Deployed]
+
+Next you need to switch the web application to use the database you just
+deployed.
