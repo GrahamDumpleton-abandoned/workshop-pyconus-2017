@@ -1,1 +1,140 @@
 ## Linking Database
+
+To link the web application with the database, a number of techniques could
+be used. The simplest is to use an environment variable which passes the
+database connection string to the web application.
+
+For the database details:
+
+* *Database Service Name*: `blog-db`
+* *PostgreSQL Connection Username*: `username`
+* *PostgreSQL Connection Password*: `password`
+* *PostgreSQL Database Name*: `blog`
+
+the full database connection string you will need to use will be:
+
+[source]
+----
+postgresql://username:password@blog-db:5432/blog
+----
+
+The web application used in this workshop expects the database connection
+string to be supplied in the environment variable `DATABASE_URL`. When
+supplied it will automatically re-configure itself to use the separate
+database server, rather than the SQLite database.
+
+To set this environment variable for the web application, from the command
+line, run the command:
+
+[source]
+----
+oc set env dc/blog DATABASE_URL=postgresql://username:password@blog-db:5432/blog
+----
+
+This should output:
+
+[source]
+----
+deploymentconfig "blog" updated
+----
+
+Updating the configuration for the deployment configuratin will result in
+the web application being automatically redeployed with the new environment
+variable being set.
+
+You can verify what environment variables should be passed from the
+deployment configuration by running:
+
+[source]
+----
+oc set env dc/blog --list
+----
+
+This should display:
+
+[source]
+----
+# deploymentconfigs blog, container blog
+DATABASE_URL=postgresql://username:password@blog-db:5432/blog
+----
+
+To verify that any environment variables are indeed being passed into the
+running web application, you can use the web console to create an
+interactive terminal against the pod and run the `env` command.
+Alternatively, you can use `oc rsh` from the command line to execute the
+`env` command inside of the pod for the web application.
+
+[source]
+----
+POD=`oc get pods --selector app=blog -o name`
+oc rsh $POD env
+---
+
+Running the `env` command inside of the container will also show up any
+other environment variables which are automatically being passed into the
+web application, and not just the environment variable you added.
+
+With the web application re-deployed, if you now visit the web application
+in your browser, you should see the blog site banner, but you will find
+there are no blog posts.
+
+That there are no blog posts is because when using SQLite, the web
+application code was designed to automatically initialise the contents of
+the database, creating an initial user account and populating it with some
+blog posts. This was safe to do as the database was being discarded each
+time the web application was restarted. When using a separate persistent
+database server, it is safer to manually run any database initialisation,
+and do it only once. This ensures you don't accidentally wipe the database.
+
+To initialise the separate database server, a setup script is supplied
+as part of the web application. To run this setup script, run the command:
+
+[source]
+----
+POD=`oc get pods --selector app=blog -o name`
+oc rsh $POD scripts/setup
+---
+
+This setup script is a simple wrapper which in turn calls the Django
+management commands for setting up the database and creating a super user
+account. It will also pre-load some blog posts. When creating the super
+user account, it will prompt you for a user name and password to use.
+
+The output from running the command should be similar to the following:
+
+[source]
+----
+ -----> Running Django database table migrations.
+Operations to perform:
+  Apply all migrations: admin, auth, blog, contenttypes, sessions
+Running migrations:
+  No migrations to apply.
+  Your models have changes that are not yet reflected in a migration, and so won't be applied.
+  Run 'manage.py makemigrations' to make new migrations, and then re-run 'manage.py migrate' to apply them.
+ -----> Running Django super user creation
+Username: developer
+Email address: developer@example.com
+Password:
+Password (again):
+Superuser created successfully.
+ -----> Pre-loading Django database with blog posts.
+Installed 2 object(s) from 1 fixture(s)
+----
+
+Return to your browser and refresh the home page for the web application
+and you should again see the pre-populated blog posts. This time they are
+being stored in the separate PostgreSQL database server.
+
+Login in to the blog site using the user name and password you supplied
+when the setup script was run above and add a new blog post.
+
+Now kill the running instance of the web application so it is restarted, by
+running:
+
+[source]
+----
+oc delete pod --selector app=blog
+----
+
+Unlike before when the SQLite database was being used, the new post that
+you added should still be present.
