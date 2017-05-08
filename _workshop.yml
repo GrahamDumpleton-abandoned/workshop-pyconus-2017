@@ -19,5 +19,4 @@ modules:
   - deploy-postgresql
   - linking-database
   - adding-storage
-  - delete-application
   - further-resources

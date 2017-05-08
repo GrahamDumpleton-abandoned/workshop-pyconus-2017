@@ -50,7 +50,5 @@ modules:
     name: Linking Database
   adding-storage:
     name: Adding Storage
-  delete-application:
-    name: Delete Application
   further-resources:
     name: Further Resources
