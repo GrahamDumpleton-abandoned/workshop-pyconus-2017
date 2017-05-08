@@ -23,21 +23,34 @@ This flexibility makes OpenShift an ideal platform for deploying both web
 applications and databases.
 
 Below you will find further resources so you can continue learning about,
-or experiment with OpenShift.
+or experimenting with OpenShift.
 
-* *link:https://www.openshift.org/[OpenShift Origin]*
+* *link:https://www.openshift.org/[OpenShift Origin]* - The upstream Open
+Source community project that powers OpenShift.
 
-* *link:https://learn.openshift.com/[OpenShift Interactive Learning Portal]*
+* *link:https://learn.openshift.com/[OpenShift Interactive Learning
+Portal]* - An online interactive learning environment where you can run
+through various scenarios related to using OpenShift.
 
-* *link:https://www.openshift.org/minishift/[Minishift]*
+* *link:https://www.openshift.org/minishift/[Minishift]* - A tool which can
+be used to install a local OpenShift cluster on your own computer, running
+in a virtual machine.
 
-* *link:https://manage.openshift.com/[OpenShift Online]*
-* *link:https://www.openshift.com/dedicated[OpenShift Dedicated]*
-* *link:https://www.openshift.com/[OpenShift Container Platform]*
+* *link:https://manage.openshift.com/[OpenShift Online]* - A shared public
+hosting environment for running your applications using OpenShift.
 
-The following free online eBooks are also available for download related
-to OpenShift.
+* *link:https://www.openshift.com/dedicated[OpenShift Dedicated]* - A
+dedicated hosting environment for running your applications, managed and
+supported for you by Red Hat.
 
-* *link:https://www.openshift.com/promotions/for-developers.html[OpenShift for Developers]*
+* *link:https://www.openshift.com/[OpenShift Container Platform]* - The Red
+Hat supported OpenShift product for installation on premise or in hosted
+cloud environments.
+
+The following free online eBooks are also available for download related to
+OpenShift.
+
+* *link:https://www.openshift.com/promotions/for-developers.html[OpenShift
+for Developers]*
 
 image::openshift-for-developers.png[OpenShift for Developers]
