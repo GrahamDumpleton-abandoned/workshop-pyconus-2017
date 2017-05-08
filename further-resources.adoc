@@ -1,1 +1,29 @@
 ## Further Resources
+
+In this workshop you
+
+- Deployed from source code the Python web application. Initially this
+  used a self contained SQLite database with no persistence of data across
+  restarts.
+
+- Deployed a PostgreSQL database, linked the Python web application up to
+  the database and initialise the database. The PostgreSQL database used
+  a persistent volume for data storage so that contents of posts, which are
+  stored in the database, are preserved across restarts of the database.
+
+- Attached a persistent volume to the Python web application for storage of
+  images uploaded with posts, so that they are preserved across restarts of
+  the web application.
+
+The exercices show how OpenShift can be used not only for deploying
+stateless web applications, but also applications require persistent file
+system storage.
+
+This flexibility makes OpenShift an ideal platform for deploying both web
+applications and databases.
+
+Below you will find further resources so you can continue learning about,
+or experiment with OpenShift.
+
+* *link:https://docs.openshift.org/[OpenShift Origin]*
+* *linkhttps://manage.openshift.com/[OpenShift Online]*
