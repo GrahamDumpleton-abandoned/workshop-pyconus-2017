@@ -213,6 +213,5 @@ your computer.
 If you would like to know more about setting up automated builds, or
 building from local source code, ask the instructor or workshop assistants
 when you have completed the workshop and if time is still available we can
-provide more details on how to do it. Links to documentation are also
-provided for these features in the resources section at the end of the
-workshop notes.
+provide more details on how to do it. Further information can also be
+found in the online documentation for OpenShift.
