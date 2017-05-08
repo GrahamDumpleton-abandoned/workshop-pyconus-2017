@@ -68,7 +68,7 @@ Alternatively, you can use `oc rsh` from the command line to execute the
 ----
 POD=`oc get pods --selector app=blog -o name`
 oc rsh $POD env
----
+----
 
 Running the `env` command inside of the container will also show up any
 other environment variables which are automatically being passed into the
