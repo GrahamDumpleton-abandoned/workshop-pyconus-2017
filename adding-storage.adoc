@@ -1,5 +1,10 @@
 ## Adding Storage
 
+By adding a separate PostgreSQL database server, the blog posts were
+retained across a restart of the web application. The database was saved in
+a persistent volume, so a restart of the database would also see the posts
+being retained.
+
 [source]
 ----
 oc set volume dc/blog --add --name=blog-images -t pvc --claim-name=blog-images --claim-size=1G -m /opt/app-root/src/media
