@@ -25,5 +25,19 @@ applications and databases.
 Below you will find further resources so you can continue learning about,
 or experiment with OpenShift.
 
-* *link:https://docs.openshift.org/[OpenShift Origin]*
-* *linkhttps://manage.openshift.com/[OpenShift Online]*
+* *link:https://www.openshift.org/[OpenShift Origin]*
+
+* *link:https://learn.openshift.com/[OpenShift Interactive Learning Portal]*
+
+* *link:https://www.openshift.org/minishift/[Minishift]*
+
+* *link:https://manage.openshift.com/[OpenShift Online]*
+* *link:https://www.openshift.com/dedicated[OpenShift Dedicated]*
+* *link:https://www.openshift.com/[OpenShift Container Platform]*
+
+The following free online eBooks are also available for download related
+to OpenShift.
+
+* *link:https://www.openshift.com/promotions/for-developers.html[OpenShift for Developers]*
+
+image::openshift-for-developers.png[OpenShift for Developers]
