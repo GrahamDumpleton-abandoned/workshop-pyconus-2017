@@ -93,7 +93,7 @@ as part of the web application. To run this setup script, run the command:
 ----
 POD=`oc get pods --selector app=blog -o name`
 oc rsh $POD scripts/setup
----
+----
 
 This setup script is a simple wrapper which in turn calls the Django
 management commands for setting up the database and creating a super user
