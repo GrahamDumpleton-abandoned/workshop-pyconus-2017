@@ -108,9 +108,20 @@ The output from running the command should be similar to the following:
 Operations to perform:
   Apply all migrations: admin, auth, blog, contenttypes, sessions
 Running migrations:
-  No migrations to apply.
-  Your models have changes that are not yet reflected in a migration, and so won't be applied.
-  Run 'manage.py makemigrations' to make new migrations, and then re-run 'manage.py migrate' to apply them.
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying blog.0001_initial... OK
+  Applying sessions.0001_initial... OK
  -----> Running Django super user creation
 Username: developer
 Email address: developer@example.com
@@ -126,7 +137,9 @@ and you should again see the pre-populated blog posts. This time they are
 being stored in the separate PostgreSQL database server.
 
 Login in to the blog site using the user name and password you supplied
-when the setup script was run above and add a new blog post.
+when the setup script was run above and add a new blog post. As before,
+only add the text for the content of the blog post, do not add any image
+to the post.
 
 Now kill the running instance of the web application so it is restarted, by
 running:
@@ -138,3 +151,44 @@ oc delete pod --selector app=blog
 
 Unlike before when the SQLite database was being used, the new post that
 you added should still be present.
+
+This is obviously was the case though as you only restarted the web
+application and the data is being stored in the separate PostrgreSQL
+instance.
+
+To validate that the posts are actually persistent, you need to restart the
+PostgreSQL database.
+
+Being a database and wanting to ensure that we don't risk data corruption
+by brutely killing the container, you should perform a more orderly
+shutdown of the database. This can be done by running the command:
+
+[source]
+----
+oc scale dc/blog-db --replicas=0
+----
+
+What this command will do is shutdown the running PostgreSQL database
+instance, but retain all the configuration related to it, as well as the
+persistent volume it is using.
+
+Monitor the status of the database from the web console. Once it has
+shutdown, start it up again by running:
+
+[source]
+----
+oc scale dc/blog-db --replicas=1
+----
+
+Do not run more than one replica, as this database configuration only
+supports a single reader/writer process. A more complex deployment
+configuration is required if you want to run a scalable database.
+
+In your web browser, reload the page for the blog site. This may initially
+display an error as Django is setup to cache connections to the database,
+and the fact that we shutdown the database means that the connection was
+broken. Keep refreshing until you see the blog site being displayed once
+more.
+
+When it is working again, take note how the blog post you added is still
+present.
