@@ -8,8 +8,8 @@ server product such as PostgreSQL.
 
 In order to switch from SQLite to PostgreSQL you will first need to deploy
 an instance of a PostgreSQL database that can be used. Specifying that
-PostgreSQL should be deployed, can done from the web console when adding a
-new application to a project.
+PostgreSQL should be deployed, can be done from the web console when adding
+a new application to a project.
 
 On the overview page of the web console, select _Add to project_ in the
 top menu bar.
