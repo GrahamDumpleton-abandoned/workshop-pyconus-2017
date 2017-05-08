@@ -5,10 +5,46 @@ retained across a restart of the web application. The database was saved in
 a persistent volume, so a restart of the database would also see the posts
 being retained.
 
+Not all the data a web application collects may be sored in a database
+though.
+
+Return to the blog site and edit an existing post. Upload an image to be
+displayed with the post.
+
+image::blog-post-image.png[Blog Post Image]
+
+Once again, kill the running instance of the web application so it is
+restarted, by running:
+
+[source]
+----
+oc delete pod --selector app=blog
+----
+
+Refresh the blog post with the image and you will see that the image that
+was uploaded can no longer be found, even though the record of the post
+believed an image was attached.
+
+image::blog-post-broken.png[Blog Post Broken]
+
+This was because the image is not being stored in the database, but in a
+directory in the file system. At this point that directory only exists
+within the container, and so when the web application was restarted by
+killing the container, the image was lost.
+
+To ensure separate data such as images which are stored in the file system
+are retained across restarts, it is necessary to mount a persistent volume
+into the container for the web application.
+
+You can claim a persistent volume and mount it into the web application
+container by running the command:
+
 [source]
 ----
 oc set volume dc/blog --add --name=blog-images -t pvc --claim-name=blog-images --claim-size=1G -m /opt/app-root/src/media
 ----
+
+This will output:
 
 [source]
 ----
@@ -16,14 +52,30 @@ persistentvolumeclaims/blog-images
 deploymentconfig "blog" updated
 ----
 
+As this was a change to the deployment configuration, the web application
+will be automatically restarted.
+
+Edit the post again and clear the link for the broken image and upload an
+image again. Delete the pod for the web application again, and the image
+should this time still be present after the restart.
+
+You can see what persistent volumes you have claimed and which are associated
+with your project by running:
+
 [source]
 ----
 oc get pvc
 ----
 
+This should display output similar to:
+
 [source]
 ----
 NAME          STATUS    VOLUME    CAPACITY   ACCESSMODES   AGE
 blog-db       Bound     pv0033    100Gi      RWO,ROX,RWX   3h
-blog-images   Bound     pv0017    100Gi      RWO,ROX,RWX   15s
+blog-images   Bound     pv0017    100Gi      RWO,ROX,RWX   2m
 ----
+
+The output will show not only the persistent volume you just claimed to
+store upload images, but also that previously created when the PostgreSQL
+database was deployed.
