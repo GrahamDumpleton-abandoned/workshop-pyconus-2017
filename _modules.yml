@@ -7,7 +7,7 @@ config:
       desc: Router DNS suffix (https://appname-project.<suffix>)
       value: "apps.pycon.pixy.io"
     - name: WORKSHOP_NOTES
-      desc: Address to access workahop notes.
+      desc: Address to access workshop notes.
       value: "http://workshop.apps.pycon.pixy.io"
     - name: DOWNLOAD_CLIENT_WINDOWS
       desc: URL to download oc client for Windows
