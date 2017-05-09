@@ -23,10 +23,10 @@ containers. These include:
   existing container image supplied by a third party. OpenShift will pull
   down the nominated image and deploy it.
 
-In this workshop you will deploy a Python web application from application
-source code hosted in a Git repository hosted by GitHub. The processing of
-building the container image from the application source code is
-facilitated using a tool provided by the
+When you deployed the Python web application in the last exercise,
+OpenShift pulled down the application source code from a Git repository
+hosted by GitHub. This process of building the container image from the
+application source code is facilitated using a tool provided by the
 https://github.com/openshift/source-to-image[Source-to-Image (S2I)]
 project.
 
@@ -45,6 +45,48 @@ image::source-to-image.png[Source-to-Image]
 
 OpenShift provides S2I builder images for a range of programming languages
 and environments, including support for Java, NodeJS, PHP, Python and Ruby.
+
+The operation of the S2I builder is split into two phases. These are the
+_assemble_ and _run_ phases.
+
+The assemble phase covers actions run by a S2I builder when preparing a
+container image for deployment. In the case of the Python S2I builder,
+during the assemble phase it will detect the presence of a
+`requirements.txt` file in the application source code and install using
+`pip` any Python packages required by the application which are listed.
+
+The run phase covers actions run when the container image is deployed and
+the application is to be started. In the case of the Python S2I builder it
+will look at the application source code and determine how the web
+application should be started. A simplified version of the algorithm it
+uses, covering common cases, is as follows:
+
+1. If a program file named `app.sh` exists in the top level directory of
+the application source code, it will be executed to start the application.
+You can run from `app.sh` any application, so long as it accepts inbound
+HTTP connections on port 8080.
+
+2. If a Python code file named `app.py` exists in the top level directory
+of the application source code, it will be executed as a Python script. You
+can run from `app.py` any Python web server or application framework, so
+long as it accepts inbound HTTP connections on port 8080.
+
+3. If the `gunicorn` package has been installed via the `requirements.txt`
+file, and a `wsgi.py` file is located in the top level directory of the
+source code repository, the Gunicorn WSGI server will be used to host the
+WSGI application. The name of the WSGI application entry point callable
+contained in the `wsgi.py` file should be called `application`.
+
+4. If the `Django` package has been installed via the `requirements.txt`
+and a `manage.py` file is located in the top level directory of the source
+code repository, it will be assumed that a Django based application is
+being used. For this case the Django application will be started using the
+Django development server. As the Django development server is not suitable
+for production use, this method should though only be relied on for initial
+setup or testing.
+
+For the web application used in this workshop, it supplied a `app.sh` file
+which in turn ran `mod_wsgi-express`.
 
 A full discussion of S2I is beyond the scope of this workshop, but you can
 find more information about it in the

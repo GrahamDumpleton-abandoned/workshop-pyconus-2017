@@ -8,10 +8,10 @@ GitHub at:
 
 *link:https://github.com/openshift-katacoda/blog-django-py[]*
 
-You will deploy the application using the Python S2I builder image which is
-bundled with OpenShift. It is possible to use either the web console or the
-command line client to deploy the application. For this exercise you will
-be using the command line.
+You will deploy the application using the Python Source-to-Image (S2I)
+builder image which is bundled with OpenShift. It is possible to use either
+the web console or the command line client to deploy the application. For
+this exercise you will be using the command line.
 
 ### Creating the application
 

@@ -11,8 +11,8 @@ modules:
   - user-credentials
   - client-installation
   - accessing-openshift
-  - source-to-image
   - deploy-application
+  - source-to-image
   - using-web-console
   - expose-application
   - testing-application

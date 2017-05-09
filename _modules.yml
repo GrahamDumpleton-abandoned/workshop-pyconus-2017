@@ -37,10 +37,10 @@ modules:
     name: Client Installation
   accessing-openshift:
     name: Accessing OpenShift
-  source-to-image:
-    name: Source-to-Image
   deploy-application:
     name: Deploy Application
+  source-to-image:
+    name: Source-to-Image
   using-web-console:
     name: Using Web Console
   expose-application:
