@@ -78,12 +78,12 @@ WSGI application. The name of the WSGI application entry point callable
 contained in the `wsgi.py` file should be called `application`.
 
 4. If the `Django` package has been installed via the `requirements.txt`
-and a `manage.py` file is located in the top level directory of the source
-code repository, it will be assumed that a Django based application is
-being used. For this case the Django application will be started using the
-Django development server. As the Django development server is not suitable
-for production use, this method should only be relied on for initial
-setup or testing.
+file and a `manage.py` file is located in the top level directory of the
+source code repository, it will be assumed that a Django based application
+is being used. For this case the Django application will be started using
+the Django development server. As the Django development server is not
+suitable for production use, this method should only be relied on for
+initial setup or testing.
 
 For the web application used in this workshop, it supplied an `app.sh` file
 which in turn ran `mod_wsgi-express`.
