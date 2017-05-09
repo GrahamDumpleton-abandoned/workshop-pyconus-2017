@@ -1,6 +1,5 @@
-## {{WORKSHOP_NOTES}}
-
 ## Workshop Overview
+## {{WORKSHOP_NOTES}}
 
 In this workshop you will learn about deploying applications to OpenShift.
 
