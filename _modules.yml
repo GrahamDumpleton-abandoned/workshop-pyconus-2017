@@ -2,10 +2,10 @@ config:
   vars:
     - name: CONSOLE_ADDRESS
       desc: Address to access the OpenShift console
-      value: 127.0.0.1:8443
+      value: console.pycon.pixy.io:8443
     - name: ROUTER_ADDRESS
       desc: Router DNS suffix (https://appname-project.<suffix>)
-      value: "127.0.0.1.xip.io"
+      value: "apps.pycon.pixy.io"
     - name: DOWNLOAD_CLIENT_WINDOWS
       desc: URL to download oc client for Windows
       value: "https://github.com/openshift/origin/releases/download/v1.5.0/openshift-origin-client-tools-v1.5.0-031cbe4-windows.zip"
