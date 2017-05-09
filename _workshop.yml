@@ -1,6 +1,6 @@
 ---
 id: pyconus2017
-name: OpenShift Workshop (PyCon US 2017) -- http://workshop.apps.pycon.pixy.io/
+name: OpenShift Workshop (PyCon US 2017)
 
 content:
   url: https://raw.githubusercontent.com/GrahamDumpleton/workshop-pyconus-2017/master
