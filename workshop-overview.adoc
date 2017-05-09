@@ -1,6 +1,11 @@
 ## Workshop Overview
 
-In this workshop you will learn about deploying applications to OpenShift.
+In this workshop you will learn about deploying applications to OpenShift. The workshop notes can be found at:
+
+[align=center,cols="^"]
+|============================
+[big red yellow-background]*{{WORKSHOP_NOTES}}*
+|============================
 
 The workshop provides a set of hands on exercises for you to work through.
 That is, you are provided with the instructions and work through them
