@@ -25,8 +25,9 @@ containers. These include:
 
 When you deployed the Python web application in the last exercise,
 OpenShift pulled down the application source code from a Git repository
-hosted by GitHub. This process of building the container image from the
-application source code is facilitated using a tool provided by the
+hosted by GitHub, built an image from it, and deployed it. This process of
+building the container image from the application source code is
+facilitated using a tool provided by the
 https://github.com/openshift/source-to-image[Source-to-Image (S2I)]
 project.
 
