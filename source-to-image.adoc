@@ -85,7 +85,7 @@ Django development server. As the Django development server is not suitable
 for production use, this method should though only be relied on for initial
 setup or testing.
 
-For the web application used in this workshop, it supplied a `app.sh` file
+For the web application used in this workshop, it supplied an `app.sh` file
 which in turn ran `mod_wsgi-express`.
 
 A full discussion of S2I is beyond the scope of this workshop, but you can
