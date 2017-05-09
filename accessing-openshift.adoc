@@ -116,7 +116,7 @@ workshop, visit the URL:
 
 *link:https://{{CONSOLE_ADDRESS}}[]*
 
-As with logging in from the command line, you may get a an error due to the
+As with logging in from the command line, you may get an error due to the
 use of a self signed certificate. Add an exception to allow the browser to
 communicate with the web site. The first screen you should then see will be
 the user authentication screen.

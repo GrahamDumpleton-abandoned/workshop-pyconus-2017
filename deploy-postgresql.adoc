@@ -50,7 +50,7 @@ up a page to confirm the details used.
 
 image::database-details.png[Database Details]
 
-Select on _Go to overview_ to watch as the deployment occurs. When the
+Select on _Continue to overview_ to watch as the deployment occurs. When the
 deployment has completed, the overview page should show the web application
 for the blog and the database.
 

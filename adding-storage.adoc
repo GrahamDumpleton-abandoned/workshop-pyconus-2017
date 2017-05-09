@@ -5,7 +5,7 @@ retained across a restart of the web application. The database was saved in
 a persistent volume, so a restart of the database would also see the posts
 being retained.
 
-Not all the data a web application collects may be sored in a database
+Not all the data a web application collects may be stored in a database
 though.
 
 Return to the blog site and edit an existing post. Upload an image to be
@@ -57,8 +57,14 @@ As this was a change to the deployment configuration, the web application
 will be automatically restarted.
 
 Edit the post again and clear the link for the broken image and upload an
-image again. Delete the pod for the web application again, and the image
-should this time still be present after the restart.
+image again. Delete the pod for the web application again by running:
+
+[source]
+----
+oc delete pod --selector app=blog
+----
+
+and the image should this time still be present after the restart.
 
 You can see what persistent volumes you have claimed and which are associated
 with your project by running:

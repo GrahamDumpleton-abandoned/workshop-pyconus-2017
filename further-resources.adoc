@@ -1,6 +1,6 @@
 ## Further Resources
 
-In this workshop you
+In this workshop you:
 
 - Deployed from source code the Python web application. Initially this
   used a self contained SQLite database with no persistence of data across
