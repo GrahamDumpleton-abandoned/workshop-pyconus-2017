@@ -64,10 +64,20 @@ interactive terminal against the pod and run the `env` command.
 Alternatively, you can use `oc rsh` from the command line to execute the
 `env` command inside of the pod for the web application.
 
+To get a list of the pods running instances of the web application
+run the command:
+
 [source]
 ----
-POD=`oc get pods --selector app=blog -o name`
-oc rsh $POD env
+oc get pods --selector app=blog -o name
+----
+
+Now run `oc rsh` substituting the name of the pod for the web application
+in the command:
+
+[source,role=copypaste]
+----
+oc rsh blog-X-XXXX env
 ----
 
 Running the `env` command inside of the container will also show up any
@@ -86,13 +96,13 @@ time the web application was restarted. When using a separate persistent
 database server, it is safer to manually run any database initialisation,
 and do it only once. This ensures you don't accidentally wipe the database.
 
-To initialise the separate database server, a setup script is supplied
-as part of the web application. To run this setup script, run the command:
+To initialise the separate database server, a setup script is supplied as
+part of the web application. To run this setup script, run `oc rsh` against
+the pod again, but change the command executed to `scripts/setup`.
 
-[source]
+[source,role=copypaste]
 ----
-POD=`oc get pods --selector app=blog -o name`
-oc rsh $POD scripts/setup
+oc rsh blog-X-XXXX scripts/setup
 ----
 
 This setup script is a simple wrapper which in turn calls the Django
