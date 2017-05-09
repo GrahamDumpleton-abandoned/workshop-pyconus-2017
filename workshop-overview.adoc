@@ -1,4 +1,4 @@
-# {{WORKSHOP_NOTES}}
+## {{WORKSHOP_NOTES}}
 
 ## Workshop Overview
 
