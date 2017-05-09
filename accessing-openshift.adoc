@@ -128,7 +128,7 @@ Enter in the credentials for your assigned user account:
 [source,role=copypaste]
 ----
 Username: userXX
-Password: pyconus2017
+Password: userXX
 ----
 
 After you have authenticated to the web console, you will be presented with
