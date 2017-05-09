@@ -82,7 +82,7 @@ and a `manage.py` file is located in the top level directory of the source
 code repository, it will be assumed that a Django based application is
 being used. For this case the Django application will be started using the
 Django development server. As the Django development server is not suitable
-for production use, this method should though only be relied on for initial
+for production use, this method should only be relied on for initial
 setup or testing.
 
 For the web application used in this workshop, it supplied an `app.sh` file
