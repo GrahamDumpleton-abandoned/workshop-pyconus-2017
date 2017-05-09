@@ -55,7 +55,7 @@ Enter in the credentials for your assigned user account:
 [source,role=copypaste]
 ----
 Username: userXX
-Password: pyconus2017
+Password: userXX
 ----
 
 When you have been authenticated successfully, you will see the following
