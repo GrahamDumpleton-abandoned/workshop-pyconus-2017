@@ -72,8 +72,8 @@ run the command:
 oc get pods --selector app=blog -o name
 ----
 
-Now run `oc rsh` substituting the name of the pod for the web application
-in the command:
+Now run `oc rsh` substituting the name of the pod for that of the web
+application in the command:
 
 [source,role=copypaste]
 ----
