@@ -59,3 +59,7 @@ OpenShift.
 for Developers]*
 
 image::openshift-for-developers.png[OpenShift for Developers]
+
+* *link:https://www.openshift.com/promotions/devops-with-openshift.html[DevOps with OpenShift]*
+
+image::devops-with-openshift.png[DevOps with OpenShift]
